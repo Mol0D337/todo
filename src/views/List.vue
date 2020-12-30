@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container bcg">
     <h1>List</h1>
 
     <div class="row">
@@ -77,14 +77,19 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .td {
-    max-width: 400px;
-  }
+<style lang="sass" scoped>
+  .bcg
+    background-color: #f4f9f3
+    width: 100vw
+    height: 100vh
 
-  .text {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+  .td
+    max-width: 400px
+
+
+  .text
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+
 </style>

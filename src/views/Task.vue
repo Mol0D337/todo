@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row bcg">
     <div v-if="task" class="col s6 offset-s3">
       <h1>{{task.title}}</h1>
 
@@ -78,6 +78,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 
+  .bcg
+    background-color: #f4f9f3
+    width: 100vw
+    height: 100vh
 </style>

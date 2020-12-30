@@ -13,10 +13,21 @@ export default new Router({
       component: () => import('../views/MainPage.vue')
     },
     {
+      path: '/quotes',
+      name: 'quotes',
+      component: () => import('../views/Quotes.vue')
+    },
+    {
+      path: '/entry',
+      name: 'entry',
+      component: () => import('../views/Entry.vue')
+    },
+    {
       path: '/create',
       name: 'create',
       component: () => import('../views/Create.vue')
     },
+
     {
       path: '/list',
       name: 'list',

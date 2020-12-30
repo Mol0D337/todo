@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row bcg">
     <div class="col s6 offset-s3">
       <h1>Create task</h1>
 
@@ -23,6 +23,7 @@
         <button class="btn" type="submit">Create task</button>
       </form>
     </div>
+
   </div>
 </template>
 
@@ -54,9 +55,9 @@ export default {
         status: 'active',
         tags: this.chips.chipsData,
         date: this.date.date
-      }
+      };
 
-      this.$store.dispatch('createTask', task)
+      this.$store.dispatch('createTask', task);
       this.$router.push('/list')
     }
   },
@@ -71,3 +72,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="sass">
+  .bcg
+    background-color: #f4f9f3
+    width: 100vw
+    height: 100vh
+</style>
