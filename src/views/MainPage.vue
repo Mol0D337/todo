@@ -1,20 +1,22 @@
 <template>
-  <div class="bcg"></div>
+  <div class="title">
 
+
+
+    <Background/>
+
+  </div>
 </template>
 
 <script>
+  import Background from "../components/Background";
   export default {
     name: "MainPage",
+    components: {Background},
   }
 </script>
 
 <style scoped lang="sass">
-  .bcg
-    width: 100vw
-    height: 100vh
-    background: url("../assets/image/bcg-main-page.png") no-repeat center center
-    background-size: cover
 
 
 </style>

@@ -1,6 +1,6 @@
 <template>
 
-  <nav class="blue darken-3">
+  <nav class="teal darken-3">
     <div class="nav-wrapper">
       <router-link
               to="/"
@@ -8,7 +8,7 @@
       >
         MOLOD
       </router-link>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
         <router-link
                 tag="li"
                 to="/create"
@@ -36,5 +36,8 @@
 <style lang="sass" scoped>
   nav
     padding: 0 2rem
+
+  a
+    text-transform: uppercase
 
 </style>
