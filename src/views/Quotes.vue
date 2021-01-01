@@ -1,14 +1,14 @@
 <template>
   <div class="bcg">
-    <QuotesCard/>
+    <Quote/>
   </div>
 </template>
 
 <script>
-  import QuotesCard from "../components/QuotesCard";
+  import Quote from "../components/Quotes/Quote";
   export default {
     name: "Quotes",
-    components: {QuotesCard}
+    components: {Quote},
   }
 </script>
 
