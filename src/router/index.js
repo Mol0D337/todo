@@ -13,11 +13,6 @@ export default new Router({
       component: () => import('../views/MainPage.vue')
     },
     {
-      path: '/quotes',
-      name: 'quotes',
-      component: () => import('../views/Quotes.vue')
-    },
-    {
       path: '/entry',
       name: 'entry',
       component: () => import('../views/Entry.vue')
@@ -27,7 +22,6 @@ export default new Router({
       name: 'create',
       component: () => import('../views/Create.vue')
     },
-
     {
       path: '/list',
       name: 'list',
