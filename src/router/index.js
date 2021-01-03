@@ -8,19 +8,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/test',
-      name: 'test',
-      component: () => import('../views/List2.vue')
-    },
-    {
       path: '/',
       name: 'main',
       component: () => import('../views/MainPage.vue')
-    },
-    {
-      path: '/quotes',
-      name: 'quotes',
-      component: () => import('../views/Quotes.vue')
     },
     {
       path: '/entry',
@@ -32,7 +22,6 @@ export default new Router({
       name: 'create',
       component: () => import('../views/Create.vue')
     },
-
     {
       path: '/list',
       name: 'list',

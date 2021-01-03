@@ -19,14 +19,6 @@
         >
           <a href="#">list</a>
         </router-link>
-        <router-link
-                tag="li"
-                to="/quotes"
-                exact
-                style="width: 100px;text-align: center"
-        >
-          <a href="#">quotes</a>
-        </router-link>
       </ul>
 
       <router-link
