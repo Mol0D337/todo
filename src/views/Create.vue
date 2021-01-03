@@ -13,9 +13,9 @@
         <div class="chips" ref="chips"></div>
 
         <div class="input-field">
-          <textarea v-model="description" id="description" class="materialize-textarea"></textarea>
+          <textarea maxlength="120" v-model="description" id="description" class="materialize-textarea"></textarea>
           <label for="description">Description</label>
-          <span class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/100</span>
+          <div class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</div>
         </div>
 
         <input type="text" ref="datepicker">

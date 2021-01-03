@@ -14,26 +14,26 @@ export default new Vuex.Store({
   },
   mutations: {
     createTask(state, task) {
-      state.tasks.push(task)
+      state.tasks.push(task);
 
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
     updateTask(state, {id, description, date}) {
-      const tasks = state.tasks.concat()
+      const tasks = state.tasks.concat();
 
-      const idx = tasks.findIndex(t => t.id === id)
-      const task = tasks[idx]
+      const idx = tasks.findIndex(t => t.id === id);
+      const task = tasks[idx];
 
-      const status = new Date(date) > new Date() ? 'active' : 'outdated'
+      const status = new Date(date) > new Date() ? 'active' : 'outdated';
 
-      tasks[idx] = {...task, date, description, status}
+      tasks[idx] = {...task, date, description, status};
 
-      state.tasks = tasks
+      state.tasks = tasks;
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
     completeTask(state, id) {
-      const idx = state.tasks.findIndex(t => t.id === id)
-      state.tasks[idx].status = 'completed'
+      const idx = state.tasks.findIndex(t => t.id === id);
+      state.tasks[idx].status = 'completed';
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     }
   },
