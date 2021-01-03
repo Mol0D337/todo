@@ -1,5 +1,6 @@
 <template>
   <div class="container bcg">
+
     <h1>List</h1>
 
     <div class="row">
@@ -54,7 +55,9 @@
 </template>
 
 <script>
+import Quote from "../components/Quotes/Quote";
 export default {
+  components: {Quote},
   data: () => ({
     filter: null,
   }),

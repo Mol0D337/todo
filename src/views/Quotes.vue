@@ -16,5 +16,4 @@
   .bcg
     background-color: #f4f9f3
     width: 100vw
-    height: 100vh
 </style>
