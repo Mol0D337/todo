@@ -2,18 +2,18 @@
   <div>
     <h1>LIST</h1>
 
-<!--    <div class="row">-->
-<!--      <div class="input-field col s6 ">-->
-<!--        <select ref="select" v-model="filter">-->
-<!--          <option value="" disabled selected>Choose your option</option>-->
-<!--          <option value="active">Active</option>-->
-<!--          <option value="outdated">Outdated</option>-->
-<!--          <option value="completed">Completed</option>-->
-<!--        </select>-->
-<!--        <label>Status filter</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <button v-if="filter" class="btn btn-small red" @click="filter = null">Clear filter</button>-->
+    <div class="row">
+      <div class="input-field col s6 ">
+        <select ref="select" v-model="filter">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="active">Active</option>
+          <option value="outdated">Outdated</option>
+          <option value="completed">Completed</option>
+        </select>
+        <label>Status filter</label>
+      </div>
+    </div>
+    <button v-if="filter" class="btn btn-small red" @click="filter = null">Clear filter</button>
 
 
 
@@ -82,14 +82,13 @@ export default {
     displayTasks() {
       let from = (this.pageNum - 1) * this.itemPage;
       let to = from + this.itemPage;
-      return this.tasks.slice(from, to);
 
-      // return this.tasks.filter(t => {
-      //   if (!this.filter) {
-      //     return true
-      //   }
-      //   return t.status === this.filter
-      // });
+      return this.tasks.filter(t => {
+        if (!this.filter) {
+          return true
+        }
+        return t.status === this.filter
+      }).slice(from, to);
     },
     pages() {
       return Math.ceil(this.tasks.length / 8);
