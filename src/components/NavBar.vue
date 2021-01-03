@@ -9,7 +9,7 @@
                 exact
                 style="width: 100px;text-align: center"
         >
-          <a href="#">todo</a>
+          <a href="#">Create</a>
         </router-link>
         <router-link
                 tag="li"
@@ -27,14 +27,15 @@
         >
           <a href="#">quotes</a>
         </router-link>
-
       </ul>
+
       <router-link
               to="/"
               class="brand-logo center"
       >
         MOLOD
       </router-link>
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <router-link
                 tag="li"

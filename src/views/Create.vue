@@ -15,7 +15,7 @@
         <div class="input-field">
           <textarea v-model="description" id="description" class="materialize-textarea"></textarea>
           <label for="description">Description</label>
-          <span class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/2048</span>
+          <span class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/100</span>
         </div>
 
         <input type="text" ref="datepicker">
@@ -39,7 +39,7 @@ export default {
   mounted() {
     this.chips = M.Chips.init(this.$refs.chips, {
       placeholder: 'Task tags'
-    })
+    });
     this.date = M.Datepicker.init(this.$refs.datepicker, {
       format: 'dd.mm.yyyy',
       defaultDate: new Date(),
