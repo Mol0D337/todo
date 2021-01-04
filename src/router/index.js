@@ -44,12 +44,20 @@ export default new Router({
       component: () => import('../views/Profile.vue'),
       beforeEnter: (to, from, next) => {
         const userAuth = localStorage.getItem('userAuth');
+        const userProfile = localStorage.getItem('userProfile');
         if (userAuth === "yes") {
           next()
+        } if (userProfile === "yes") {
+          next('/profile/info')
         } else {
           next('/login')
         }
       }
+    },
+    {
+      path: '/profile/info',
+      name: 'profileInfo',
+      component: () => import('../views/ProfileInfo.vue'),
     },
     {
       path: '/create',

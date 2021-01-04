@@ -12,6 +12,10 @@ export default new Vuex.Store({
       return task
     }),
 
+    profiles: JSON.parse(localStorage.getItem('profiles') || '[]').map(task => {
+      return task
+    }),
+
     users: JSON.parse(localStorage.getItem('users') || '[]').map(user => {
       return user
     }),
@@ -22,6 +26,11 @@ export default new Vuex.Store({
       state.tasks.push(task);
 
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
+    createProfile(state, profile) {
+      state.profiles.push(profile);
+
+      localStorage.setItem('profiles', JSON.stringify(state.profiles))
     },
     createUser(state, user) {
       state.users.push(user);
@@ -51,6 +60,9 @@ export default new Vuex.Store({
     createTask({commit}, task) {
       commit('createTask', task)
     },
+    createProfile({commit}, profile) {
+      commit('createProfile', profile)
+    },
     createUser({commit}, user) {
       commit('createUser', user)
     },
@@ -64,7 +76,9 @@ export default new Vuex.Store({
   getters: {
     users: s => s.users,
     tasks: s => s.tasks,
-    taskById: s => id => s.tasks.find(t => t.id === id)
+    profiles: s => s.profile,
+    profileById: s => id => s.profile.find(t => t.id === id),
+    taskById: s => id => s.tasks.find(t => t.id === id),
   }
 })
 
