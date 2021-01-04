@@ -10,6 +10,12 @@
                   v-for="profile of profiles"
                   :key="profile.id"
           >
+            <div
+                  v-for="user of users"
+                 :key="user.id"
+            >
+              {{user.email}}
+            </div>
             <h1>{{profile.name}}</h1>
             <h1>{{profile.surname}}</h1>
             <h1>{{profile.gender}}</h1>
@@ -32,6 +38,9 @@
     computed: {
       profiles() {
         return this.$store.getters.profiles
+      },
+      users() {
+        return this.$store.getters.users
       },
     },
   }
