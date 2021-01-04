@@ -9,8 +9,9 @@
       </div>
 
       <div class="entry__wrapper-right">
-        <form >
-          <svg width="200px" height="200px" viewBox="0 0 200 200" aria-labelledby="svg-title svg-desc">
+        <form @submit.prevent="submitLogin">
+          <div style="text-align: center; margin-bottom: 60px; margin-top: 50px">
+            <svg width="200px" height="200px" viewBox="0 0 200 200" aria-labelledby="svg-title svg-desc">
             <g id="ghost-body" fill="#ffffff" stroke="#999" stroke-width="3" stroke-linejoin="round">
               <path d="M 54,181 C 44,131 13,11 99,11 185,12 164,110 150,182 146,195 139,185 137,177 134,170 126,169 124,179 120,192 114,190 109,179 105,167 98,166 94,179 92,185 85,193 79,179 74,170 68,168 66,179 62,193 56,191 54,181 Z"></path>
               <path id="eye-right" class="eye" fill="#ffffee" d="M 69,71 C 69,64 73,54 84,55 96,56 100,62 100,70 100,79 89,83 84,83 78,83 69,80 69,71 Z"></path>
@@ -25,11 +26,31 @@
               <path id="ghost-arm-left" class="ghost-arm" d="M 155,88 C 191,90 194,114 192,125 191,137 172,109 155,116" data-hover="M 155,88 C 145,68 105,51 103,62 102,74 123,117 155,116" style="animation-delay:-1s"></path>
             </g>
           </svg>
+          </div>
+
 
           <div class="login__form">
-            <input type="email" placeholder="useremail@gmail.com" v-model="email" @focus="updateMouthEyes" @blur="blurEmail">
-            <input type="password" v-model="password" @focus="focusPassword" @blur="blurPassword">
-            <button class="btn">Login</button>
+
+              <div class="input-field" style="width: 400px">
+                <input id="email" type="email" class="validate" v-model="email" @focus="updateMouthEyes" @blur="blurEmail" required>
+                <label for="email">Email</label>
+              </div>
+
+              <div class="input-field" style="width: 400px">
+                <input id="password" type="password" minlength="6" required class="validate" v-model="password" @focus="focusPassword" @blur="blurPassword">
+                <label for="password">Password</label>
+              </div>
+
+            <button type="submit" class="btn" style="border-radius: 5px; width: 100px">Login</button>
+
+            <router-link
+             tag="div"
+             to="/registration"
+             style="cursor: pointer; color: #3949ab; display: flex; justify-content: center; margin-top: 50px; text-transform: capitalize"
+            >
+              Registration
+            </router-link>
+
           </div>
         </form>
       </div>
@@ -42,9 +63,10 @@
 
 <script>
   import Scratchable from "./Scratchable";
+  import Reg from "./Reg";
   export default {
     name: "Entry",
-    components: {Scratchable},
+    components: {Reg, Scratchable},
     data() {
       return {
         email: '',
@@ -52,6 +74,16 @@
       }
     },
     methods: {
+      submitLogin() {
+        const user = {
+          email: this.email,
+          password: this.password,
+        };
+        this.$store.dispatch('createUser', user);
+        this.$router.push('/');
+      },
+
+
       updateMouthEyes() {
         if (this.email.length > 0) {
           if (this.email.indexOf("@") > 0 && this.email.indexOf("@") < this.email.length - 1) {
@@ -91,6 +123,9 @@
 </script>
 
 <style scoped lang="sass">
+
+
+
 
   .entry__wrapper
     width: 960px

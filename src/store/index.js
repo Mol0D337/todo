@@ -10,6 +10,10 @@ export default new Vuex.Store({
         task.status = 'outdated'
       }
       return task
+    }),
+
+    users: JSON.parse(localStorage.getItem('users') || '[]').map(user => {
+      return user
     })
   },
   mutations: {
@@ -18,6 +22,12 @@ export default new Vuex.Store({
 
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
+    createUser(state, user) {
+      state.users.push(user);
+
+      localStorage.setItem('users', JSON.stringify(state.users))
+    },
+
     updateTask(state, {id, description, date}) {
       const tasks = state.tasks.concat();
 
@@ -41,6 +51,9 @@ export default new Vuex.Store({
     createTask({commit}, task) {
       commit('createTask', task)
     },
+    createUser({commit}, user) {
+      commit('createUser', user)
+    },
     updateTask({commit}, task) {
       commit('updateTask', task)
     },
@@ -49,6 +62,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    users: s => s.users,
     tasks: s => s.tasks,
     taskById: s => id => s.tasks.find(t => t.id === id)
   }
