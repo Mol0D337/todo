@@ -44,9 +44,9 @@
 
       </div>
     </div>
-    <div v-else >No tasks</div>
+    <h5 v-else style="text-align: center" >No tasks</h5>
 
-    <div class="pagination__container">
+    <div v-if="tasks.length" class="pagination__container">
       <div class="pagination">
         <div @click="btnPrev" class="pagination-item--wide first"> <div class="pagination-link--wide first">Previous</div> </div>
 

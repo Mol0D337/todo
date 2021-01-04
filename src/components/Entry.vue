@@ -4,13 +4,17 @@
     <div class="entry__wrapper">
 
       <div class="entry__wrapper-left">
-        <Scratchable/>
-        <div style="text-align: center;margin-top: 10px; margin-bottom: -15px; color: #0d47a1">Необходимо стереть</div>
+
+          <div class="btn-n">
+            <Scratchable/>
+            <span class="tooltip-p right_tooltip-p">Необходимо стереть</span>
+          </div>
+
       </div>
 
       <div class="entry__wrapper-right">
         <form @submit.prevent="submitLogin">
-          <div style="text-align: center; margin-bottom: 60px; margin-top: 50px">
+          <div style="text-align: center; margin-bottom: 40px; margin-top: 50px">
             <svg width="200px" height="200px" viewBox="0 0 200 200" aria-labelledby="svg-title svg-desc">
             <g id="ghost-body" fill="#ffffff" stroke="#999" stroke-width="3" stroke-linejoin="round">
               <path d="M 54,181 C 44,131 13,11 99,11 185,12 164,110 150,182 146,195 139,185 137,177 134,170 126,169 124,179 120,192 114,190 109,179 105,167 98,166 94,179 92,185 85,193 79,179 74,170 68,168 66,179 62,193 56,191 54,181 Z"></path>
@@ -28,7 +32,6 @@
           </svg>
           </div>
 
-
           <div class="login__form">
 
               <div class="input-field" style="width: 400px">
@@ -44,9 +47,9 @@
             <button type="submit" class="btn" style="border-radius: 5px; width: 100px">Login</button>
 
             <router-link
-             tag="div"
-             to="/registration"
-             style="cursor: pointer; color: #3949ab; display: flex; justify-content: center; margin-top: 50px; text-transform: capitalize"
+                    tag="div"
+                    to="/registration"
+                    class="reg__text"
             >
               Registration
             </router-link>
@@ -74,15 +77,6 @@
       }
     },
     methods: {
-      submitLogin() {
-        const user = {
-          email: this.email,
-          password: this.password,
-        };
-        this.$store.dispatch('createUser', user);
-        this.$router.push('/');
-      },
-
 
       updateMouthEyes() {
         if (this.email.length > 0) {
@@ -123,6 +117,98 @@
 </script>
 
 <style scoped lang="sass">
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,700')
+  .reg__text
+    user-select: none
+    cursor: pointer
+    color: #3949ab
+    display: flex
+    justify-content: center
+    margin-top: 50px
+    text-transform: capitalize
+
+  .wrapper-r
+    font-family: 'Ubuntu', sans-serif
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 682px
+
+
+  .btn-n
+    text-transform: uppercase
+    letter-spacing: 2px
+    line-height: 40px
+    text-align: center
+    cursor: pointer
+    position: relative
+    font-weight: 700
+
+
+  .btn-n:last-child
+    margin-right: 0
+
+
+  /* Tooltip */
+  .tooltip-p
+    position: absolute
+    width: 90%
+    height: 44px
+    line-height: 44px
+    background: linear-gradient(-135deg, #c850c0, #4158d0)
+    color: #fff
+    top: 555px
+    left: 505px
+    font-weight: 700
+    font-size: 15px
+    border-radius: 10px
+    opacity: 0
+    transition: all 0.5s ease
+
+
+
+  .tooltip.right_tooltip-p
+    left: 160px
+
+  .right_tooltip-p:before
+    content: ""
+    position: absolute
+    top: 0
+    left: -10px
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-top: 10px solid #4158d0
+    border-bottom: 10px solid transparent
+
+
+
+
+  .tooltip-p.bottom_tooltip-p
+    top: 610px
+
+  .bottom_tooltip-p:before
+    content: ""
+    position: absolute
+    top: -10px
+    left: 0px
+    border-left: 10px solid #05F2AE
+    border-right: 10px solid transparent
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+
+
+  .btn-n:hover .tooltip-p
+    opacity: 1
+
+
+  @media screen and (max-width: 1000px)
+    .wrapper-r
+      width: 140px
+
+    .btn-n
+      margin: 40px 0
+
 
 
 
@@ -135,7 +221,7 @@
     padding: 30px
     display: flex
     justify-content: space-between
-    align-items: center
+    align-items: flex-start
 
   .bck
     display: flex
