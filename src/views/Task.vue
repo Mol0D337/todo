@@ -16,8 +16,13 @@
         <input type="text" ref="datepicker">
 
         <div v-if="task.status !== 'completed'">
-          <button class="btn" type="submit" style="margin-right: 1rem;">Update</button>
-          <button class="btn blue" type="button" @click="completeTask">Complete task</button>
+          <router-link
+            to="/list"
+          >
+            <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem;">back</button>
+          </router-link>
+          <button class="btn waves-effect" type="submit" style="margin-right: 1rem;">Update</button>
+          <button class="btn blue waves-effect" type="button" @click="completeTask">Complete task</button>
         </div>
       </form>
     </div>
@@ -38,16 +43,16 @@ export default {
     date: null,
   }),
   mounted() {
-    this.description = this.task.description
+    this.description = this.task.description;
     this.chips = M.Chips.init(this.$refs.chips, {
       placeholder: 'Task tags',
       data: this.task.tags
-    })
+    });
     this.date = M.Datepicker.init(this.$refs.datepicker, {
       format: 'dd.mm.yyyy',
       defaultDate: new Date(this.task.date),
       setDefaultDate: true
-    })
+    });
     setTimeout(() => {
       M.updateTextFields()
     }, 0)
@@ -58,12 +63,12 @@ export default {
         id: this.task.id,
         description: this.description,
         date: this.date.date
-      })
+      });
       this.$router.push('/list')
     },
     completeTask() {
-      this.$store.dispatch('completeTask', this.task.id)
-      this.$router.push('/list')
+      this.$store.dispatch('completeTask', this.task.id);
+      this.$router.push('/list');
     }
   },
   destroyed() {
@@ -81,7 +86,7 @@ export default {
 <style lang="sass" scoped>
 
   .bcg
-    background-color: #f4f9f3
-    width: 100vw
-    height: 100vh
+    background: #f4f9f3
+    width: 100%
+    min-height: calc(100vh - 64px)
 </style>

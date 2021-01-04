@@ -27,6 +27,14 @@
     margin: 0 auto
     overflow-x: hidden
 
+  h1
+    font-size: 2.5rem
+    font-weight: normal
+    color: #444
+    text-align: center
+    margin: 2rem 0
+    line-height: 110%
+
   ::-webkit-scrollbar  /* 1 - скроллбар */
     width: 0
     height: 50px

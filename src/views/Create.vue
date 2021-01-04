@@ -1,9 +1,9 @@
 <template>
   <div class="row bcg" style="margin-bottom: 0">
-    <div class="col s6 offset-s3 create">
-      <div class="create__top">
-        <div class="create__text">CREATE TASK</div>
-      </div>
+
+    <div class="col s6 offset-s3">
+
+      <h1>CREATE TASK</h1>
 
       <form @submit.prevent="submitHandler">
         <div class="input-field">
@@ -14,7 +14,7 @@
 
         <div class="chips" ref="chips"></div>
 
-        <div class="input-field">
+        <div class="input-field" style="margin-top: 20px">
           <textarea maxlength="120" v-model="description" id="description" class="materialize-textarea"></textarea>
           <label for="description">Description</label>
           <div class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</div>
@@ -22,12 +22,13 @@
 
         <input type="text" ref="datepicker">
 
-        <button class="btn" type="submit">Create task</button>
+
+        <button style="margin-top: 15px; border-radius: 99px;" class="btn waves-effect" type="submit" name="action">Create
+          <i class="material-icons right">send</i>
+        </button>
       </form>
 
     </div>
-
-
 
   </div>
 </template>
@@ -78,21 +79,11 @@
 
 <style scoped lang="sass">
   .bcg
-    background: #ebeeef
+    background: #f4f9f3
     width: 100%
     min-height: calc(100vh - 64px)
 
-  .create
-    margin-top: 150px
-    padding: 30px
-    background: white
-    border-radius: 20px
 
-    &__top
-      padding: 0
-      margin: 0
-      height: 100px
-      background: url("../assets/image/bcg-main-page.png") no-repeat center center
-      background-size: cover
+
 
 </style>
