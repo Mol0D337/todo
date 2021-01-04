@@ -31,19 +31,11 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <router-link
                 tag="li"
-                to="/entry"
+                to="/profile"
                 exact
                 style="width: 130px;text-align: center"
         >
-          <a href="#">entry</a>
-        </router-link>
-        <router-link
-                tag="li"
-                to="/registration"
-                exact
-                style="width: 130px;text-align: center"
-        >
-          <a href="#">Registration</a>
+          <a href="#">Profile</a>
         </router-link>
       </ul>
     </div>
