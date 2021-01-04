@@ -3,8 +3,10 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import VueScratchable from 'vue-scratchable'
 import 'materialize-css/dist/js/materialize.min'
 
+Vue.use(VueScratchable);
 Vue.config.productionTip = false;
 
 new Vue({
