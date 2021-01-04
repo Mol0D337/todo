@@ -70,13 +70,13 @@
     },
     methods: {
       submitRegistration() {
+        localStorage.setItem('userAuth', 'yes');
         const user = {
           email: this.email,
           password: this.password,
         };
         this.$store.dispatch('createUser', user);
-        localStorage.setItem('userAuth', 'yes');
-        this.$router.push('/');
+        this.$router.push('/profile');
       },
       updateMouthEyes() {
         if (this.email.length > 0) {
