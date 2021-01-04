@@ -1,7 +1,7 @@
 <template>
-  <div>
-
-  </div>
+  <h1 >
+    ProfileInfo
+  </h1>
 </template>
 
 <script>

@@ -53,9 +53,9 @@
     },
     methods: {
       submit (profile) {
+        localStorage.setItem('userProfile', 'yes');
         console.log(profile);
         this.$store.dispatch('createProfile', profile);
-        localStorage.setItem('userProfile', 'yes');
         this.$router.push('/');
       }
     }
