@@ -66,10 +66,9 @@
 
 <script>
   import Scratchable from "./Scratchable";
-  import Reg from "./Reg";
   export default {
     name: "Entry",
-    components: {Reg, Scratchable},
+    components: {Scratchable},
     data() {
       return {
         email: '',
@@ -77,7 +76,15 @@
       }
     },
     methods: {
-
+      submitLogin() {
+        const user = {
+          email: this.email,
+          password: this.password,
+        };
+        this.$store.dispatch('createUser', user);
+        localStorage.setItem('userAuth', 'yes');
+        this.$router.push('/');
+      },
       updateMouthEyes() {
         if (this.email.length > 0) {
           if (this.email.indexOf("@") > 0 && this.email.indexOf("@") < this.email.length - 1) {

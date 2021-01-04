@@ -14,7 +14,8 @@ export default new Vuex.Store({
 
     users: JSON.parse(localStorage.getItem('users') || '[]').map(user => {
       return user
-    })
+    }),
+
   },
   mutations: {
     createTask(state, task) {
@@ -27,7 +28,6 @@ export default new Vuex.Store({
 
       localStorage.setItem('users', JSON.stringify(state.users))
     },
-
     updateTask(state, {id, description, date}) {
       const tasks = state.tasks.concat();
 
