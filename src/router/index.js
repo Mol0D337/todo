@@ -47,8 +47,6 @@ export default new Router({
         const userProfile = localStorage.getItem('userProfile');
         if (userAuth === "yes") {
           next()
-        } if (userProfile === "yes") {
-          next('/profile/info')
         } else {
           next('/login')
         }
@@ -63,7 +61,7 @@ export default new Router({
         if (userProfile === "yes") {
           next()
         } else {
-          next('/login')
+          next('/profile')
         }
       }
     },

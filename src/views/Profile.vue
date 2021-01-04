@@ -56,7 +56,7 @@
         localStorage.setItem('userProfile', 'yes');
         console.log(profile);
         this.$store.dispatch('createProfile', profile);
-        this.$router.push('/');
+        this.$router.push('/profile/info');
       }
     }
   }
