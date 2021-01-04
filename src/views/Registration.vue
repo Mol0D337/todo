@@ -1,12 +1,14 @@
 <template>
   <div>
-    registration
+
   </div>
 </template>
 
 <script>
+  import Entry from "../components/Entry";
   export default {
-    name: "Registration"
+    name: "Registration",
+    components: {Entry}
   }
 </script>
 
