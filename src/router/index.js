@@ -15,12 +15,28 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/Login.vue')
+      component: () => import('../views/Login.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "no") {
+          next()
+        } else {
+          next('/profile')
+        }
+      }
     },
     {
       path: '/registration',
       name: 'registration',
-      component: () => import('../views/Registration.vue')
+      component: () => import('../views/Registration.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "no") {
+          next()
+        } else {
+          next('/profile')
+        }
+      }
     },
     {
       path: '/profile',
