@@ -18,7 +18,7 @@ export default new Router({
       component: () => import('../views/Login.vue'),
       beforeEnter: (to, from, next) => {
         const userAuth = localStorage.getItem('userAuth');
-        if (userAuth === "no") {
+        if (userAuth !== "yes") {
           next()
         } else {
           next('/profile')
@@ -31,7 +31,7 @@ export default new Router({
       component: () => import('../views/Registration.vue'),
       beforeEnter: (to, from, next) => {
         const userAuth = localStorage.getItem('userAuth');
-        if (userAuth === "no") {
+        if (userAuth !== "no") {
           next()
         } else {
           next('/profile')
@@ -58,6 +58,14 @@ export default new Router({
       path: '/profile/info',
       name: 'profileInfo',
       component: () => import('../views/ProfileInfo.vue'),
+      beforeEnter: (to, from, next) => {
+        const userProfile = localStorage.getItem('userProfile');
+        if (userProfile === "yes") {
+          next()
+        } else {
+          next('/login')
+        }
+      }
     },
     {
       path: '/create',
