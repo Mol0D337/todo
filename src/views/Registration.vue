@@ -75,6 +75,7 @@
           password: this.password,
         };
         this.$store.dispatch('createUser', user);
+        localStorage.setItem('userAuth', 'yes');
         this.$router.push('/');
       },
       updateMouthEyes() {
