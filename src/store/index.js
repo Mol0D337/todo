@@ -76,8 +76,8 @@ export default new Vuex.Store({
   getters: {
     users: s => s.users,
     tasks: s => s.tasks,
-    profiles: s => s.profile,
-    profileById: s => id => s.profile.find(t => t.id === id),
+    profiles: s => s.profiles,
+    profileById: s => id => s.profiles.find(t => t.id === id),
     taskById: s => id => s.tasks.find(t => t.id === id),
   }
 })

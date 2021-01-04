@@ -140,7 +140,6 @@ export default {
   .td
     max-width: 400px
 
-
   .text
     white-space: nowrap
     text-overflow: ellipsis
@@ -151,7 +150,6 @@ export default {
     padding-top: 2em
     text-align: center
     user-select: none
-
 
   .pagination-item
     list-style-type: none
