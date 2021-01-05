@@ -1,7 +1,7 @@
 <template>
   <div class="bcg">
     <div class="list__wrapper">
-      <h1>LIST</h1>
+      <div class="h1">LIST</div>
       <div class="row" style="margin: 0 20px">
         <div class="input-field col s12 ">
           <select ref="select" v-model="filter">
@@ -121,6 +121,15 @@ export default {
   @import url(http://weloveiconfonts.com/api/?family=entypo)
   @import url(https://fonts.googleapis.com/css?family=Roboto:300)
 
+  .h1
+    font-size: 2.5rem
+    font-weight: normal
+    color: #444
+    text-align: center
+    margin: 0 0 2rem
+    padding-top: 2rem
+    line-height: 110%
+
   .task__status
     color: rgba(255, 255, 255, 0.9)
     font-weight: 700
@@ -136,6 +145,7 @@ export default {
   .bcg
     background-color: #f4f9f3
     width: 100vw
+    min-height: calc(100vh - 64px)
 
   .td
     max-width: 400px

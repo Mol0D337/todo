@@ -57,7 +57,7 @@
         this.$store.dispatch('createProfile', profile);
         setTimeout(function(){
           location.reload()
-        }, 1600);
+        }, 1800);
         this.$router.push('/profile');
       }
     }
