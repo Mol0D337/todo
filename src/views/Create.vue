@@ -1,11 +1,11 @@
 <template>
-  <div class="row bcg" style="margin-bottom: 0">
+  <div class="bcg" style="margin-bottom: 0">
 
-    <div class="col s6 offset-s3">
+    <div class="entry__wrapper">
 
-      <h1>CREATE TASK</h1>
+      <form @submit.prevent="submitHandler" style="width: 600px">
+        <div class="h1">CREATE TASK</div>
 
-      <form @submit.prevent="submitHandler">
         <div class="input-field">
           <input id="title" v-model="title" type="text" class="validate" required>
           <label for="title">Title</label>
@@ -23,8 +23,10 @@
         <input type="text" ref="datepicker">
 
 
-        <button style="margin-top: 15px; border-radius: 99px;" class="btn waves-effect" type="submit" name="action">Create
-          <i class="material-icons right">send</i>
+        <button style="margin-top: 25px; border-radius: 5px; width: 100px"
+                class="btn waves-effect" type="submit" name="action"
+        >
+          Create
         </button>
       </form>
 
@@ -79,11 +81,31 @@
 
 <style scoped lang="sass">
   .bcg
-    background: #f4f9f3
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    background: linear-gradient(-135deg, #c850c0, #4158d0)
     width: 100%
     min-height: calc(100vh - 64px)
 
 
+  .entry__wrapper
+    width: 660px
+    background: #fff
+    border-radius: 10px
+    overflow: hidden
+    padding: 30px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
 
+  .h1
+    font-size: 2.5rem
+    font-weight: normal
+    color: #444
+    text-align: center
+    margin: 1rem 0 3rem
+    line-height: 110%
 
 </style>
