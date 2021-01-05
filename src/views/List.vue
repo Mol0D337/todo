@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bcg">
     <div class="list__wrapper">
       <h1>LIST</h1>
       <div class="row" style="margin: 0 20px">
