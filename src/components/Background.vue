@@ -33,16 +33,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.8;
   }
 
   .goo {
+    color: black;
     font-size: 3rem;
     line-height: 1.35;
     display: inline;
+    -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    background-color: #00695c;
+    background-color: #fff;
     padding: 0.5rem 1rem;
-    filter: url('#goo');
+    filter: url(#goo);
+    opacity: 50%;
   }
 
   .goo:focus {
@@ -56,7 +60,7 @@
     flex-wrap: wrap;
   }
 
-  .butFrame{ height: calc(100vh - 64px); width: 100vw}
+  .butFrame{ height: 100vh; width: 100vw}
   .butFrame * {box-sizing: border-box;}
 
 
@@ -168,7 +172,7 @@
   .butFrame .butTextWrap::before,
   .butFrame .butTextWrap::after {
     position: absolute;
-    top: 10px;
+    top: 74px;
     right: 10px;
     bottom: 10px;
     left: 10px;

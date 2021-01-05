@@ -1,6 +1,6 @@
 <template>
 
-  <nav class="teal darken-3">
+  <nav class="transparent" style="z-index: 99; position: absolute">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <router-link
@@ -43,7 +43,9 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    name: "NavBar",
+  }
 </script>
 
 <style lang="sass" scoped>
