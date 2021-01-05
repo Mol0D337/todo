@@ -16,6 +16,10 @@
             >
               {{user.email}}
             </div>
+            <div class="input-field">
+              <input v-model="profile.name" id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
             <h1>{{profile.name}}</h1>
             <h1>{{profile.surname}}</h1>
             <h1>{{profile.gender}}</h1>

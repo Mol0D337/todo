@@ -54,9 +54,11 @@
     methods: {
       submit (profile) {
         localStorage.setItem('userProfile', 'yes');
-        console.log(profile);
         this.$store.dispatch('createProfile', profile);
-        this.$router.push('/profile/info');
+        setTimeout(function(){
+          location.reload()
+        }, 1600);
+        this.$router.push('/profile');
       }
     }
   }

@@ -1,9 +1,11 @@
 <template>
-  <div class="row bcg">
-    <div v-if="task" class="col s6 offset-s3">
-      <h1>{{task.title}}</h1>
+  <div class="bcg">
+    <div v-if="task" class="entry__wrapper">
 
-      <form @submit.prevent="submitHandler">
+
+      <form @submit.prevent="submitHandler" style="width: 700px">
+
+        <div class="h1">{{task.title}}</div>
 
         <div class="chips" ref="chips"></div>
 
@@ -15,7 +17,7 @@
 
         <input type="text" ref="datepicker">
 
-        <div v-if="task.status !== 'completed'">
+        <div v-if="task.status !== 'completed'" style="margin-top: 25px">
           <router-link
             to="/list"
           >
@@ -84,9 +86,31 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
   .bcg
-    background: #f4f9f3
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    background: linear-gradient(-135deg, #c850c0, #4158d0)
     width: 100%
     min-height: calc(100vh - 64px)
+
+
+  .entry__wrapper
+    width: 760px
+    background: #fff
+    border-radius: 10px
+    overflow: hidden
+    padding: 30px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+  .h1
+    font-size: 2.5rem
+    font-weight: normal
+    color: #444
+    text-align: center
+    margin: 1rem 0 3rem
+    line-height: 110%
 </style>
