@@ -1,28 +1,44 @@
 <template>
   <div class="waveWrapper waveAnimation">
+
     <div class="bck">
       <ConversationalForm @submit="submit" class="position">
         <fieldset>
-          <label for="name">Привет! Как ваше имя?</label>
-          <input required data-question="Привет! Как ваше имя? " type="text" name="name" id="name">
+          <label for="email" >Привет! Как ваше имя?</label>
+          <input pattern="^[a-zA-ZА-Яа-я]+$"
+                 data-invalid="Введите коректное имя."
+                 data-question="Привет! Как ваше имя? "
+                 type="text"
+                 name="email"
+                 id="name">
         </fieldset>
         <fieldset>
-          <label for="surname">{name}, Как ваша фамилия?</label>
-          <input required data-question="{name}, Как ваша фамилия? " type="text" name="surname" id="surname">
+          <label for="surname">{email}, Как ваша фамилия?</label>
+          <input required
+                 pattern="^[a-zA-ZА-Яа-я]+$"
+                 data-invalid="Введите коректную фамилию."
+                 data-question="{email}, Как ваша фамилия? "
+                 type="text" name="surname" id="surname">
         </fieldset>
         <fieldset>
           <label for="name">Пол</label><br />
-          <input type="radio" data-question="{name}, Какого вы пола?" name="gender" value="male" data-text="Мужского" /> Мужского<br>
+          <input type="radio" data-question="{email} {surname}, Какого вы пола?" name="gender" value="male" data-text="Мужского" /> Мужского<br>
           <input type="radio" name="gender" value="female" data-text="Женского" /> Женского<br>
           <input type="radio" name="gender" value="other" data-text="Я Телепузик" /> Я Телепузик
         </fieldset>
+
         <fieldset>
-          <label for="age">{name}, Какой у вас возраст?</label>
-          <input data-question="{name}, Какой у вас возраст? " type="number" name="age" id="age">
+          <label for="age">{email} {surname}, Какой у вас возраст?</label>
+          <input required
+                 pattern="[0-9]{2}"
+                 data-invalid="Введите коректный возраст."
+                 data-question="{email} {surname}, Какой у вас возраст? "
+                 type="number" name="age" id="age">
         </fieldset>
+
         <fieldset>
-          <label for="opinion">{name}, Какая у вас профессия?</label>
-          <select data-question="{name}, Какая у вас профессия?" name="opinion" id="opinion">
+          <label for="opinion">{email} {surname}, Какая у вас профессия?</label>
+          <select data-question="{email} {surname}, Какая у вас профессия?" name="opinion" id="opinion">
             <option></option>
             <option>HR</option>
             <option>Team Lead</option>
@@ -34,8 +50,8 @@
           <input data-question="{opinion}, отлично! В какой компанией вы работаете?" type="text" name="company" id="company">
         </fieldset>
         <fieldset>
-          <label >{name}, Вы готовы отправить форму?</label>
-          <button data-question="{name}, Вы готовы отправить форму?" data-success="Отправлено! Ура! 😄" name="submit" type="submit" data-cancel="Нет">Да</button>
+          <label >{email} {surname}, Вы готовы отправить форму?</label>
+          <button data-question="{email} {surname}, Вы готовы отправить форму?" data-success="Отправлено! Ура! 😄" name="submit" type="submit" data-cancel="Нет">Да</button>
         </fieldset>
         <fieldset>
           <label >Хотите начать все сначала?</label>
@@ -43,6 +59,7 @@
         </fieldset>
       </ConversationalForm>
     </div>
+
     <div class="waveWrapperInner bgTop">
       <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
     </div>
@@ -58,6 +75,7 @@
 
 <script>
   import ConversationalForm from 'vue-conversational-form'
+
   export default {
     name: "Profile",
     components: {
