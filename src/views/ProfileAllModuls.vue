@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Login v-if="loginPage"/>
-    <Profile v-if="profilePage"/>
-    <ProfileInfo v-if="profileInfoPage"/>
+    <component :is="currentComponent"/>
   </div>
 </template>
 
@@ -13,30 +11,14 @@
   export default {
     name: "ProfileAllModuls",
     components: {ProfileInfo, Profile, Login},
-    data() {
-      return {
-        loginPage: false,
-        profilePage: false,
-        profileInfoPage: false
-      }
-    },
-    created() {
-      const userAuth = localStorage.getItem('userAuth');
-      const userProfile = localStorage.getItem('userProfile');
-      if (userAuth !== "yes" || userAuth === "no" && userProfile !== "yes" || userProfile === "no") {
-        this.loginPage = true;
-        this.profilePage = false;
-        this.profileInfoPage = false;
-      }
-      if (userAuth === "yes") {
-        this.loginPage = false;
-        this.profilePage = true;
-        this.profileInfoPage = false;
-      }
-      if (userProfile === "yes") {
-        this.loginPage = false;
-        this.profilePage = false;
-        this.profileInfoPage = true;
+
+    computed: {
+      currentComponent () {
+        const userAuth = localStorage.getItem('userAuth');
+        const userProfile = localStorage.getItem('userProfile');
+        if (userAuth !== "yes" || userAuth === "no" && userProfile !== "yes" || userProfile === "no") return Login;
+        if (userAuth === "yes" && userProfile === "yes") return ProfileInfo;
+        else return Profile;
       }
     }
   }
