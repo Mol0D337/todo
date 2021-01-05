@@ -1,5 +1,6 @@
 <template>
   <div class="bcg">
+    <div style="height: 64px; width: 100%; background: #00695c"></div>
     <div class="list__wrapper">
       <div class="h1">LIST</div>
       <div class="row" style="margin: 0 20px">
@@ -15,8 +16,6 @@
       </div>
       <button style="margin-left: 30px" v-if="filter" class="btn btn-small red" @click="filter = null">Clear filter</button>
     </div>
-
-
 
 
     <div class="cols-q" v-if="tasks.length">
@@ -64,10 +63,13 @@
     </div>
 
   </div>
+
 </template>
 
 <script>
+import NavBar from "../components/NavBar";
 export default {
+  components: {NavBar},
   data: () => ({
     filter: null,
     pageNum: 1,
@@ -143,9 +145,9 @@ export default {
     bottom: 0
 
   .bcg
-    background-color: #f4f9f3
+    background-color: #fff
     width: 100vw
-    min-height: calc(100vh - 64px)
+    min-height: calc(100vh)
 
   .td
     max-width: 400px

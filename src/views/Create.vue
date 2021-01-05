@@ -1,38 +1,51 @@
 <template>
-  <div class="bcg" style="margin-bottom: 0">
+  <div class="waveWrapper waveAnimation">
+    <div class="bcg">
 
-    <div class="entry__wrapper">
+      <div class="entry__wrapper">
 
-      <form @submit.prevent="submitHandler" style="width: 600px">
-        <div class="h1">CREATE TASK</div>
+        <form @submit.prevent="submitHandler" style="width: 600px">
+          <div class="h1">CREATE TASK</div>
 
-        <div class="input-field">
-          <input id="title" v-model="title" type="text" class="validate" required>
-          <label for="title">Title</label>
-          <span class="helper-text" data-error="Title is required"></span>
-        </div>
+          <div class="input-field">
+            <input id="title" v-model="title" type="text" class="validate" required>
+            <label for="title">Title</label>
+            <span class="helper-text" data-error="Title is required"></span>
+          </div>
 
-        <div class="chips" ref="chips"></div>
+          <div class="chips" ref="chips"></div>
 
-        <div class="input-field" style="margin-top: 20px">
-          <textarea maxlength="120" v-model="description" id="description" class="materialize-textarea"></textarea>
-          <label for="description">Description</label>
-          <div class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</div>
-        </div>
+          <div class="input-field" style="margin-top: 20px">
+            <textarea maxlength="120" v-model="description" id="description" class="materialize-textarea"></textarea>
+            <label for="description">Description</label>
+            <div class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</div>
+          </div>
 
-        <input type="text" ref="datepicker">
+          <input type="text" ref="datepicker">
 
 
-        <button style="margin-top: 25px; border-radius: 5px; width: 100px"
-                class="btn waves-effect" type="submit" name="action"
-        >
-          Create
-        </button>
-      </form>
+          <button style="margin-top: 25px; border-radius: 5px; width: 100px"
+                  class="btn waves-effect" type="submit" name="action"
+          >
+            Create
+          </button>
+        </form>
+
+      </div>
 
     </div>
 
+    <div class="waveWrapperInner bgTop">
+      <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+    </div>
+    <div class="waveWrapperInner bgMiddle">
+      <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+    </div>
+    <div class="waveWrapperInner bgBottom">
+      <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -80,14 +93,17 @@
 </script>
 
 <style scoped lang="sass">
+
+
   .bcg
+    z-index: 50
+    width: 100vw
+    height: calc(100vh - 64px)
+    margin-top: 50px
     display: flex
-    flex-wrap: wrap
-    justify-content: center
     align-items: center
-    background: linear-gradient(-135deg, #c850c0, #4158d0)
-    width: 100%
-    min-height: calc(100vh - 64px)
+    justify-content: center
+    position: absolute
 
 
   .entry__wrapper
@@ -99,6 +115,11 @@
     display: flex
     justify-content: space-between
     align-items: flex-start
+
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
+    border-top: 1px solid #ddd
+    border-right: 1px solid #ddd
+    border-left: 1px solid #ddd
 
   .h1
     font-size: 2.5rem
