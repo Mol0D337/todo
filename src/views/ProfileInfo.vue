@@ -1,10 +1,11 @@
 <template>
 
   <div class="waveWrapper waveAnimation">
+
     <div class="bcg">
       <div class="entry__wrapper">
 
-        <form @submit.prevent="submitHandler" style="width: 700px">
+        <div  style="width: 600px">
 
           <div class="h1">ВАШ ПРОФИЛЬ</div>
 
@@ -13,81 +14,74 @@
                     v-for="profile of profiles"
                     :key="profile.id"
             >
+              <div class="lol-kek">
+                <div class="cycle__wrapper">
+                  <div class="cycle__inner" style="background-image: url(https://unsplash.it/g/200/200/);"></div>
+                </div>
 
-              <div class="input-field">
-                <input v-model="profile.name" id="first_name" type="text" class="validate" required>
-                <label for="first_name">Имя</label>
-                <span class="helper-text" data-error="Укажите имя"></span>
-              </div>
+                <div class="profile-l-r">
+                  <div class="profile-left">
+                    <div class="profile__margin">
+                      <label class="label__text">Имя</label>
+                      <div class="div__text">{{profile.email | toUpperCase}}</div>
+                    </div>
+                    <div class="profile__margin">
+                      <label class="label__text">Фамилия</label>
+                      <div class="div__text">{{profile.surname | toUpperCase}}</div>
+                    </div>
+                    <div class="profile__margin">
+                      <label class="label__text">Пол</label>
+                      <div class="div__text">{{profile.gender | toUpperCase}}</div>
+                    </div>
+                  </div>
+                  <div class="profile-right">
+                    <div class="profile__margin">
+                      <label class="label__text">Возраст</label>
+                      <div class="div__text">{{profile.age}}</div>
+                    </div>
+                    <div class="profile__margin">
+                      <label class="label__text">Должность</label>
+                      <div class="div__text">{{profile.opinion | toUpperCase}}</div>
+                    </div>
+                    <div class="profile__margin">
+                      <label class="label__text">Компания</label>
+                      <div class="div__text">{{profile.company}}</div>
+                    </div>
+                  </div>
 
-              <div class="input-field">
-                <input v-model="profile.surname" id="last_name" type="text" class="validate" required>
-                <label for="first_name">Фамилия</label>
-                <span class="helper-text" data-error="Укажите фамилию"></span>
-              </div>
-
-              <label>Пол</label>
-              <div class="range__input" style="margin: 15px 0 20px">
-                <label>
-                  <input v-model="profile.gender" class="with-gap" name="group1" type="radio"/>
-                  <span>Я Телепузик</span>
-                </label>
-                <label>
-                  <input v-model="profile.gender" class="with-gap" name="group1" type="radio"  />
-                  <span>Женский</span>
-                </label>
-                <label>
-                  <input v-model="profile.gender" class="with-gap" name="group1" type="radio"  />
-                  <span>Мужской</span>
-                </label>
-              </div>
-
-              <label>Возраст</label>
-              <div class="range-field" style="margin: 40px 0px 8px;">
-                <input v-model="profile.age" type="range" id="test5" min="0" max="100" class="active" />
-                <span class="thumb active"
-                      :style="{'left': + (6.84 * profile.age) + 'px'}"
-                      style="height: 30px; width: 30px; top: -30px; margin-left: -7px;">
-                <span class="value">{{profile.age}}</span>
-              </span>
-              </div>
-
-              <label>Должность</label>
-              <div class="range__input" style="margin-top: 15px">
-                <label>
-                  <input v-model="profile.opinion" class="with-gap" name="group2" type="radio"  />
-                  <span>Пиченька</span>
-                </label>
-                <label>
-                  <input v-model="profile.opinion" class="with-gap" name="group2" type="radio"  />
-                  <span>Team Lead</span>
-                </label>
-                <label>
-                  <input v-model="profile.opinion" class="with-gap" name="group2" type="radio"  />
-                  <span>HR</span>
-                </label>
+                </div>
               </div>
 
 
-              <div class="input-field" style="margin-top: 30px">
-                <input v-model="profile.company" id="company" type="text" class="validate" required>
-                <label for="first_name">Компания</label>
-                <span class="helper-text" data-error="Укажите компанию"></span>
+
+              <div class="switch" style="margin-top: 25px; margin-left: 20px">
+                <label>
+                  Русский
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  English
+                </label>
               </div>
 
-              <button style=" border-radius: 5px; width: 100px"
-                      class="btn waves-effect" type="submit"
-              >
-                Update
-              </button>
+              <div class="btn__center">
+                <button
+                        @click="exit"
+                        style="margin-top: -27px; border-radius: 5px; width: 100px; margin-left: 180px;"
+                        class="btn waves-effect"  name="action"
+                >
+                  exit
+                </button>
+              </div>
+
 
             </div>
           </div>
 
-        </form>
+        </div>
 
       </div>
     </div>
+
     <div class="waveWrapperInner bgTop">
 
       <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
@@ -104,11 +98,15 @@
 </template>
 
 <script>
+  import toUpperCase from '../filters/toUpperCase'
   export default {
     name: "ProfileInfo",
     data: () => ({
       description: '',
     }),
+    filters: {
+      toUpperCase
+    },
     mounted() {
       setTimeout(() => {
         M.updateTextFields()
@@ -118,11 +116,59 @@
       profiles() {
         return this.$store.getters.profiles
       },
+      users() {
+        return this.$store.getters.users
+      },
     },
+    methods: {
+      exit() {
+        localStorage.removeItem('profiles');
+        localStorage.removeItem('users');
+        localStorage.removeItem('userProfile');
+        localStorage.removeItem('userAuth');
+        location.reload();
+      }
+    }
   }
 </script>
 
 <style lang="sass" scoped>
+  .lol-kek
+    display: flex
+
+  .cycle__wrapper
+    border: 4px solid #00695c
+    padding: 2px
+    position: relative
+    flex-grow: 0
+    flex-shrink: 0
+    border-radius: 99999px
+    width: 200px
+    height: 200px
+
+  .cycle__inner
+    border-radius: 99999px
+    width: 100%
+    height: 100%
+    background-color: #00695c
+    background-position: center
+    background-size: cover
+
+  .profile__margin
+    margin-top: 15px
+
+  .label__text
+    font-size: 13px
+
+  .div__text
+    font-size: 17px
+
+
+  .profile-l-r
+    margin-left: 50px
+    width: 100%
+    display: flex
+    justify-content: space-between
 
 
   .bcg
@@ -137,7 +183,7 @@
 
 
   .entry__wrapper
-    width: 760px
+    width: 660px
     background: #fff
     border-radius: 10px
     overflow: hidden

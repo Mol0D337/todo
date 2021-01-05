@@ -19,13 +19,15 @@
           <input type="text" ref="datepicker">
 
           <div v-if="task.status !== 'completed'" style="margin-top: 25px">
-            <router-link
-                    to="/list"
-            >
-              <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem;">back</button>
-            </router-link>
-            <button class="btn waves-effect" type="submit" style="margin-right: 1rem;">Update</button>
-            <button class="btn blue waves-effect" type="button" @click="completeTask">Complete task</button>
+            <div class="btn__center">
+              <router-link
+                      to="/list"
+              >
+                <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem; width: 100px">back</button>
+              </router-link>
+              <button class="btn waves-effect" type="submit" style="margin-right: 1rem; width: 100px">Update</button>
+              <button class="btn blue waves-effect" type="button" @click="completeTask">Complete task</button>
+            </div>
           </div>
         </form>
       </div>

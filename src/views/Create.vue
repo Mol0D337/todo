@@ -24,11 +24,14 @@
           <input type="text" ref="datepicker">
 
 
-          <button style="margin-top: 25px; border-radius: 5px; width: 100px"
-                  class="btn waves-effect" type="submit" name="action"
-          >
-            Create
-          </button>
+          <div class="btn__center">
+            <button style="margin-top: 25px; border-radius: 5px; width: 100px"
+                    class="btn waves-effect" type="submit" name="action"
+            >
+              Create
+            </button>
+          </div>
+
         </form>
 
       </div>
