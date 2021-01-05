@@ -36,7 +36,10 @@
                 <label for="password">Password</label>
               </div>
 
-              <button type="submit" class="btn" style="border-radius: 5px; width: 130px">Registration</button>
+              <div class="btn__center">
+                <button type="submit" class="btn" style="border-radius: 5px; width: 130px">Registration</button>
+              </div>
+
 
               <router-link
                       tag="div"

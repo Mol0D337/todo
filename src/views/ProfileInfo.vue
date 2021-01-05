@@ -8,6 +8,7 @@
         <div  style="width: 600px">
 
           <div class="h1">ВАШ ПРОФИЛЬ</div>
+          <div class="h1"></div>
 
           <div >
             <div
@@ -57,7 +58,7 @@
               <div class="switch" style="margin-top: 25px; margin-left: 20px">
                 <label>
                   Русский
-                  <input type="checkbox">
+                  <input type="checkbox" v-model="locale" @click="checkLocale">
                   <span class="lever"></span>
                   English
                 </label>
@@ -103,14 +104,10 @@
     name: "ProfileInfo",
     data: () => ({
       description: '',
+      locale: false
     }),
     filters: {
       toUpperCase
-    },
-    mounted() {
-      setTimeout(() => {
-        M.updateTextFields()
-      }, 0)
     },
     computed: {
       profiles() {
@@ -119,6 +116,7 @@
       users() {
         return this.$store.getters.users
       },
+
     },
     methods: {
       exit() {
@@ -127,7 +125,20 @@
         localStorage.removeItem('userProfile');
         localStorage.removeItem('userAuth');
         location.reload();
-      }
+      },
+      checkLocale() {
+        if (this.locale === false) {
+          this.setLocale('en');
+        } else {
+          this.setLocale('ru');
+        }
+      },
+      setLocale(locale) {
+        import(`../locales/${locale}.json`).then((msgs) => {
+          this.$i18n.setLocaleMessage(locale, msgs);
+          this.$i18n.locale = locale;
+        })
+      },
     }
   }
 </script>
