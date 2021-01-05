@@ -50,6 +50,18 @@ export default new Vuex.Store({
       state.tasks = tasks;
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
+    updateProfile(state, {id, description}) {
+      const profiles = state.profiles.concat();
+
+      const idx = profiles.findIndex(t => t.id === id);
+      const profile = profiles[idx];
+
+
+      profiles[idx] = {...profile, description};
+
+      state.profiles = profiles;
+      localStorage.setItem('profiles', JSON.stringify(state.profiles))
+    },
     completeTask(state, id) {
       const idx = state.tasks.findIndex(t => t.id === id);
       state.tasks[idx].status = 'completed';
@@ -71,7 +83,10 @@ export default new Vuex.Store({
     },
     completeTask({commit}, id) {
       commit('completeTask', id)
-    }
+    },
+    updateProfile({commit}, profile) {
+      commit('updateProfile', profile)
+    },
   },
   getters: {
     users: s => s.users,
