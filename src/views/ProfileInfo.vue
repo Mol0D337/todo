@@ -25,7 +25,8 @@
               <span class="helper-text" data-error="Укажите фамилию"></span>
             </div>
 
-            <div class="range__input">
+            <label>Пол</label>
+            <div class="range__input" style="margin: 15px 0 20px">
               <label>
                 <input v-model="profile.gender" class="with-gap" name="group1" type="radio"/>
                 <span>Я Телепузик</span>
@@ -40,12 +41,18 @@
               </label>
             </div>
 
+            <label>Возраст</label>
+            <div class="range-field" style="margin: 40px 0px 8px;">
+              <input v-model="profile.age" type="range" id="test5" min="0" max="100" class="active" />
+              <span class="thumb active"
+                    :style="{'left': + (6.84 * profile.age) + 'px'}"
+                    style="height: 30px; width: 30px; top: -30px; margin-left: -7px;">
+                <span class="value">{{profile.age}}</span>
+              </span>
+            </div>
 
-            <p class="range-field" style="margin: 30px 0">
-              <input v-model="profile.age" type="range" id="age" min="0" max="100" />
-            </p>
-
-            <div class="range__input">
+            <label>Должность</label>
+            <div class="range__input" style="margin-top: 15px">
               <label>
                 <input v-model="profile.opinion" class="with-gap" name="group2" type="radio"  />
                 <span>Пиченька</span>
