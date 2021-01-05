@@ -1,3 +1,3 @@
-export default function toUpperCase() {
-  return this.value = this.value[0].toUpperCase() + this.value.slice(1);
+export default function toUpperCase(value) {
+  return value[0].toUpperCase() + value.slice(1);
 }

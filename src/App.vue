@@ -124,4 +124,8 @@
   .waveAnimation .waveBottom
     animation: move_wave 15s linear infinite
 
+  .btn__center
+    display: flex
+    justify-content: center
+
 </style>

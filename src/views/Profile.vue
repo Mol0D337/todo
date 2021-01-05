@@ -75,7 +75,6 @@
 
 <script>
   import ConversationalForm from 'vue-conversational-form'
-
   export default {
     name: "Profile",
     components: {
