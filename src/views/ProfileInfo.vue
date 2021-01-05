@@ -129,8 +129,10 @@
       checkLocale() {
         if (this.locale === false) {
           this.setLocale('en');
+          localStorage.setItem('locale', 'en');
         } else {
           this.setLocale('ru');
+          localStorage.setItem('locale', 'ru');
         }
       },
       setLocale(locale) {
