@@ -13,6 +13,11 @@ export default new Router({
       component: () => import('../views/MainPage.vue')
     },
     {
+      path: '/shop',
+      name: 'shop',
+      component: () => import('../views/Shop.vue')
+    },
+    {
       path: '/registration',
       name: 'registration',
       component: () => import('../views/Registration.vue'),

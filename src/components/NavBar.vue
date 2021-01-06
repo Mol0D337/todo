@@ -31,9 +31,17 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <router-link
                 tag="li"
+                to="/shop"
+                exact
+                style="width: 100px;text-align: center"
+        >
+          <a href="#">shop</a>
+        </router-link>
+        <router-link
+                tag="li"
                 to="/profile"
                 exact
-                style="width: 130px;text-align: center"
+                style="width: 100px;text-align: center"
         >
           <a href="#">Profile</a>
         </router-link>
