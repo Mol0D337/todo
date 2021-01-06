@@ -11,15 +11,14 @@ export default new Vuex.Store({
       }
       return task
     }),
-
     profiles: JSON.parse(localStorage.getItem('profiles') || '[]').map(task => {
       return task
     }),
-
     users: JSON.parse(localStorage.getItem('users') || '[]').map(user => {
       return user
     }),
 
+    card: [],
   },
   mutations: {
     createTask(state, task) {
@@ -94,6 +93,8 @@ export default new Vuex.Store({
     profiles: s => s.profiles,
     profileById: s => id => s.profiles.find(t => t.id === id),
     taskById: s => id => s.tasks.find(t => t.id === id),
+
+    CARD: s => s.card,
   }
 })
 
