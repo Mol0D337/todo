@@ -3,6 +3,7 @@
     <div style="height: 64px; width: 100%; background: #27273C"></div>
 
     <div class="container">
+      <Card/>
       <div class="products-content grid-container">
         <div class="filters">
           <div class="filters__item filters-price">
@@ -15,7 +16,6 @@
           </div>
         </div>
         <ShopCards/>
-        <CardItem/>
       </div>
     </div>
 
@@ -24,10 +24,10 @@
 
 <script>
   import ShopCards from "../components/Shop/ShopCards";
-  import CardItem from "../components/Shop/CardItem";
+  import Card from "../components/Shop/Card";
   export default {
     name: "Shop",
-    components: {CardItem, ShopCards}
+    components: {Card, ShopCards}
   }
 </script>
 
