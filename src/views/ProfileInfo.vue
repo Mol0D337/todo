@@ -8,7 +8,7 @@
         <div  style="width: 600px">
 
           <div class="h1">ВАШ ПРОФИЛЬ</div>
-          <div class="h1"></div>
+          <div class="h1">{{$t('test.test')}}</div>
 
           <div >
             <div
@@ -116,7 +116,16 @@
       users() {
         return this.$store.getters.users
       },
-
+    },
+    created() {
+      const locale = localStorage.getItem('locale');
+      if (locale === 'en') {
+        this.locale = true;
+        this.setLocale('en');
+      } else {
+        this.locale = false;
+        this.setLocale('ru');
+      }
     },
     methods: {
       exit() {
