@@ -15,6 +15,7 @@
           </div>
         </div>
         <ShopCards/>
+        <CardItem/>
       </div>
     </div>
 
@@ -23,9 +24,10 @@
 
 <script>
   import ShopCards from "../components/Shop/ShopCards";
+  import CardItem from "../components/Shop/CardItem";
   export default {
     name: "Shop",
-    components: {ShopCards}
+    components: {CardItem, ShopCards}
   }
 </script>
 
