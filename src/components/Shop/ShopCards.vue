@@ -27,7 +27,7 @@
             testimonials: "9 отзывов",
             term: "879876",
             available: "13",
-            priceCurrent: "47 999",
+            priceCurrent: 47999,
             priceOld: "53 999",
             article: "T1"
           },
@@ -40,7 +40,7 @@
             testimonials: "11 отзывов",
             term: "879877",
             available: "6",
-            priceCurrent: "82 999",
+            priceCurrent: 82999,
             priceOld: "91 999",
             article: "T2"
           },
@@ -53,7 +53,7 @@
             testimonials: "14 отзывов",
             term: "879878",
             available: "8",
-            priceCurrent: "70 999",
+            priceCurrent: 70999,
             priceOld: "78 999",
             article: "T3"
           },
@@ -66,7 +66,7 @@
             testimonials: "9 отзывов",
             term: "879879",
             available: "9",
-            priceCurrent: "63 999",
+            priceCurrent: 63999,
             priceOld: "70 999",
             article: "T4"
           },
@@ -79,7 +79,7 @@
             testimonials: "105 отзывов",
             term: "879880",
             available: "3",
-            priceCurrent: "29 999",
+            priceCurrent: 29999,
             priceOld: "33 999",
             article: "T5"
           },
@@ -92,7 +92,7 @@
             testimonials: "35 отзывов",
             term: "879881",
             available: "2",
-            priceCurrent: "95 999",
+            priceCurrent: 95999,
             priceOld: "105 999",
             article: "T6"
           },
@@ -105,7 +105,7 @@
             testimonials: "8 отзывов",
             term: "879882",
             available: "7",
-            priceCurrent: "39 999",
+            priceCurrent: 39999,
             priceOld: "42 999",
             article: "T7"
           },
@@ -118,7 +118,7 @@
             testimonials: "1 отзыв",
             term: "879883",
             available: "7",
-            priceCurrent: "55 999",
+            priceCurrent: 55999,
             priceOld: "59 999",
             article: "T8"
           },
@@ -131,7 +131,7 @@
             testimonials: "35 отзывов",
             term: "879884",
             available: "4",
-            priceCurrent: "43 999",
+            priceCurrent: 43999,
             priceOld: "49 999",
             article: "T9"
           },
