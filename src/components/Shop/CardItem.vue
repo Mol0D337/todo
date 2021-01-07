@@ -16,9 +16,19 @@
                       <h3 class="cart-product__title">
                         {{card_item_data.title}}
                       </h3>
-                      <span class="cart-product__price">{{card_item_data.priceCurrent}} ₴</span>
 
-                      <span class="cart-product__price" style="margin-left: 100px">{{card_item_data.quantity}}</span>
+                      <div style="display: flex; align-items: center">
+
+                        <div class="cart-product__price" >{{card_item_data.priceCurrent}} ₴</div>
+
+                        <div class="lol-l">
+                          <div class="decr" @click="decrementItem">-</div>
+                          <div class="bord">{{card_item_data.quantity}}</div>
+                          <div class="decr" @click="incrementItem">+</div>
+                        </div>
+
+                      </div>
+
                     </div>
                     <button class="cart-product__delete" aria-label="Удалить товар" @click="deleteFromCard"></button>
                   </article>
@@ -51,6 +61,13 @@
       deleteFromCard() {
         this.$emit('deleteFromCard')
       },
+
+      decrementItem() {
+        this.$emit('decrement')
+      },
+      incrementItem() {
+        this.$emit('increment')
+      },
     },
     mounted() {
       this.$set(this.card_item_data, 'quantity', 1)
@@ -59,6 +76,33 @@
 </script>
 
 <style scoped>
+  .lol-l {
+    cursor: pointer;
+    margin-left: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none
+  }
+
+  .bord {
+    user-select: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4d4d4d;
+    margin: 0 7px;
+    padding: 2px 12px;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+  }
+
+  .decr {
+    cursor: pointer;
+    margin-top: -5px;
+    color: #5d71dd;
+    font-size: 24px;
+  }
+
   .wrap-p {
     display: flex; align-items: center;padding: 20px 30px 30px;
   }

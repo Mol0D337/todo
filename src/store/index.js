@@ -83,9 +83,16 @@ export default new Vuex.Store({
         state.card.push(product)
       }
     },
-
     REMOVE_FROM_CARD: (state, index) => {
       state.card.splice(index, 1)
+    },
+    INCREMENT: (state, index) => {
+      state.card[index].quantity++
+    },
+    DECREMENT: (state, index) => {
+      if(state.card[index].quantity > 1) {
+        state.card[index].quantity--
+      }
     },
   },
   actions: {
@@ -114,6 +121,13 @@ export default new Vuex.Store({
     DELETE_FROM_CARD({commit}, index) {
       commit('REMOVE_FROM_CARD', index)
     },
+
+    INCREMENT_CARD_ITEM({commit}, index) {
+      commit('INCREMENT', index)
+    },
+    DECREMENT_CARD_ITEM({commit}, index) {
+      commit('DECREMENT', index)
+    }
   },
   getters: {
     users: s => s.users,
