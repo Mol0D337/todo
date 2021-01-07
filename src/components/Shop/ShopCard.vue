@@ -95,7 +95,6 @@
   }
 
   .product {
-
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
     width: 285px; /* для удобства */
@@ -105,6 +104,10 @@
     padding-top: 9px;
     font-size: 14px;
     background-color: #fff;
+  }
+
+  .product:hover {
+    box-shadow: 0 2px 16px rgba(0,0,0,.24);
   }
 
   .product__image {
