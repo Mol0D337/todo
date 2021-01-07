@@ -68,8 +68,25 @@ export default new Vuex.Store({
     },
 
     SET_CARD: (state, product) => {
-      state.card.push(product)
-    }
+      if(state.card.length) {
+        let isProductExists = false;
+        state.card.map(function (item) {
+          if (item.article === product.article) {
+            isProductExists = true;
+            item.quantity++
+          }
+        });
+        if(!isProductExists) {
+          state.card.push(product)
+        }
+      } else {
+        state.card.push(product)
+      }
+    },
+
+    REMOVE_FROM_CARD: (state, index) => {
+      state.card.splice(index, 1)
+    },
   },
   actions: {
     createTask({commit}, task) {
@@ -93,6 +110,9 @@ export default new Vuex.Store({
 
     ADD_TO_CARD({commit}, product) {
       commit('SET_CARD', product)
+    },
+    DELETE_FROM_CARD({commit}, index) {
+      commit('REMOVE_FROM_CARD', index)
     },
   },
   getters: {

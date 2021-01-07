@@ -17,8 +17,10 @@
                         {{card_item_data.title}}
                       </h3>
                       <span class="cart-product__price">{{card_item_data.priceCurrent}} ₴</span>
+
+                      <span class="cart-product__price" style="margin-left: 100px">{{card_item_data.quantity}}</span>
                     </div>
-                    <button class="cart-product__delete" aria-label="Удалить товар"></button>
+                    <button class="cart-product__delete" aria-label="Удалить товар" @click="deleteFromCard"></button>
                   </article>
                 </li>
               </div>
@@ -44,6 +46,14 @@
           return {}
         }
       }
+    },
+    methods: {
+      deleteFromCard() {
+        this.$emit('deleteFromCard')
+      },
+    },
+    mounted() {
+      this.$set(this.card_item_data, 'quantity', 1)
     },
   }
 </script>
@@ -153,7 +163,7 @@
   .cart-product {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: 20px;
     padding-right: 13px;
     transition: background-color 0.3s;
   }
