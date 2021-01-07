@@ -1,55 +1,32 @@
 <template>
-  <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
-    <i class="material-icons medium hover" style="color: #5d71dd; cursor: pointer; display: flex; justify-content: flex-end; width: 60px">shopping_cart</i>
-
-    <div class="cart-content">
-      <div style="display: flex; align-items: center;padding: 20px 30px 30px;" v-if="lol">
-        <i class="material-icons medium" style="color: #00ba34">shopping_basket</i>
-        <div style="padding-left: 25px;">
-          <div style="margin-bottom: 14px;font-size: 150%;"> Ваша корзина пуста </div>
-          <div style="font-size: 13px;line-height: 16px;color: #666;"> Добавляйте понравившиеся товары в корзину</div>
+  <div>
+    <ul class="cart-content__list" data-simplebar="init">
+      <div class="simplebar-wrapper" style="margin: 0px;">
+        <div class="simplebar-height-auto-observer-wrapper">
+          <div class="simplebar-height-auto-observer"></div>
         </div>
-      </div>
-
-      <div v-else>
-        <ul class="cart-content__list" data-simplebar="init">
-          <div class="simplebar-wrapper" style="margin: 0px;">
-            <div class="simplebar-height-auto-observer-wrapper">
-              <div class="simplebar-height-auto-observer"></div>
-            </div>
-            <div class="simplebar-mask">
-              <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;">
-                  <div class="simplebar-content" style="padding: 0px;">
-                    <li class="cart-content__item">
-                      <article class="cart-content__product cart-product" data-id="1">
-                        <img src="../../assets/image/macbook.jpg" alt="" class="cart-product__img">
-                        <div class="cart-product__text">
-                          <h3 class="cart-product__title">
-                            Ноутбук Apple MacBook Pro 16 TB i7 2.6/16/512 SSD SG MVVJ2RU/A
-                          </h3>
-                          <span class="cart-product__price">190 789₽</span>
-                        </div>
-                        <button class="cart-product__delete" aria-label="Удалить товар"></button>
-                      </article>
-                    </li>
-                  </div>
-                </div>
+        <div class="simplebar-mask">
+          <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+            <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;">
+              <div class="simplebar-content" style="padding: 0px;">
+                <li class="cart-content__item">
+                  <article class="cart-content__product cart-product" data-id="1">
+                    <img :src=" require('../../assets/image/' + card_item_data.imageUrl1) " alt="" class="cart-product__img">
+                    <div class="cart-product__text">
+                      <h3 class="cart-product__title">
+                        {{card_item_data.title}}
+                      </h3>
+                      <span class="cart-product__price">{{card_item_data.priceCurrent}} ₴</span>
+                    </div>
+                    <button class="cart-product__delete" aria-label="Удалить товар"></button>
+                  </article>
+                </li>
               </div>
             </div>
           </div>
-        </ul>
-        <div class="cart-content__bottom">
-          <div class="cart-content__fullprice">
-            <span>Итого:</span>
-            <span class="fullprice">190 789 ₽</span>
-          </div>
-          <button class="cart-content__btn bbtn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
         </div>
       </div>
-
-    </div>
-
+    </ul>
   </div>
 </template>
 
@@ -58,13 +35,24 @@
     name: "CardItem",
     data() {
       return {
-        lol: false,
       }
-    }
+    },
+    props: {
+      card_item_data: {
+        type: Object,
+        default() {
+          return {}
+        }
+      }
+    },
   }
 </script>
 
 <style scoped>
+  .wrap-p {
+    display: flex; align-items: center;padding: 20px 30px 30px;
+  }
+
   .hover:hover + .cart-content {
     opacity: 1;
     visibility: visible;

@@ -65,6 +65,10 @@ export default new Vuex.Store({
       const idx = state.tasks.findIndex(t => t.id === id);
       state.tasks[idx].status = 'completed';
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
+
+    SET_CARD: (state, product) => {
+      state.card.push(product)
     }
   },
   actions: {
@@ -85,6 +89,10 @@ export default new Vuex.Store({
     },
     updateProfile({commit}, profile) {
       commit('updateProfile', profile)
+    },
+
+    ADD_TO_CARD({commit}, product) {
+      commit('SET_CARD', product)
     },
   },
   getters: {

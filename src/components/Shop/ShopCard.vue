@@ -31,13 +31,13 @@
       </div>
       <div class="product__info">
         <span class="product__term">Артикул: {{product_data.term}}</span>
-        <span class="product__available">В наличии: {{product_data.available}}</span>
+        <span class="product__available">В наличии: {{product_data.available}} шт</span>
       </div>
       <div class="product__price product-price">
         <span class="product-price__current">{{product_data.priceCurrent}} ₴</span>
         <span class="product-price__old">{{product_data.priceOld}} ₴</span>
       </div>
-      <button class="product__btn" @click="sendDataToParent">Добавить в корзину</button>
+      <button class="product__btn" @click="addToCard">Добавить в корзину</button>
     </article>
   </div>
 </template>
@@ -58,8 +58,8 @@
       }
     },
     methods: {
-      sendDataToParent() {
-        this.$emit('sendDataToParent', this.product_data.article)
+      addToCard() {
+        this.$emit('addToCard',this.product_data)
       },
     },
   }

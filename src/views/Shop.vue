@@ -3,7 +3,7 @@
     <div style="height: 64px; width: 100%; background: #27273C"></div>
 
     <div class="container">
-      <Card/>
+      <Card :card_data="CARD"/>
       <div class="products-content grid-container">
         <div class="filters">
           <div class="filters__item filters-price">
@@ -25,9 +25,15 @@
 <script>
   import ShopCards from "../components/Shop/ShopCards";
   import Card from "../components/Shop/Card";
+  import {mapGetters} from 'vuex'
   export default {
     name: "Shop",
-    components: {Card, ShopCards}
+    components: {Card, ShopCards},
+    computed: {
+      ...mapGetters([
+        'CARD'
+      ])
+    },
   }
 </script>
 
