@@ -19,7 +19,7 @@
 
                       <div style="display: flex; align-items: center">
 
-                        <div class="cart-product__price" >{{card_item_data.priceCurrent}} ₴</div>
+                        <div class="cart-product__price" >{{card_item_data.priceCurrent | priceFormat}} ₴</div>
 
                         <div class="lol-l">
                           <div class="decr" @click="decrementItem">-</div>
@@ -43,11 +43,15 @@
 </template>
 
 <script>
+  import priceFormat from '../../filters/priceFormat'
   export default {
     name: "CardItem",
     data() {
       return {
       }
+    },
+    filters: {
+      priceFormat
     },
     props: {
       card_item_data: {
