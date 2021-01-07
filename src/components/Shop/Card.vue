@@ -88,6 +88,7 @@
       deleteFromCard(index) {
         this.DELETE_FROM_CARD(index)
       },
+
       decrement(index) {
         this.DECREMENT_CARD_ITEM(index);
       },
