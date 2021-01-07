@@ -20,7 +20,7 @@
           <div class="cart-content__bottom">
             <div class="cart-content__fullprice">
               <span>Итого:</span>
-              <span class="fullprice">190 789 ₽</span>
+              <span class="fullprice">{{cardTotalCost}} ₴</span>
             </div>
             <button class="cart-content__btn bbtn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
           </div>
@@ -47,7 +47,20 @@
     computed: {
       ...mapGetters([
         'CARD'
-      ])
+      ]),
+      cardTotalCost() {
+        let result = [];
+
+        for (let item of this.card_data) {
+          result.push(item.priceCurrent * item.quantity);
+        }
+
+        result = result.reduce(function (sum, el) {
+          return sum + el;
+        });
+
+        return result;
+      },
     },
     props: {
       card_data: {
