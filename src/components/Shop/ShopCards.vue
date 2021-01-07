@@ -4,12 +4,13 @@
             v-for="product in products"
             :key="product.article"
             :product_data="product"
-            @sendDataToParent="lol"
+            @addToCard="addToCard"
     />
   </div>
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import ShopCard from "./ShopCard";
   export default {
     name: "ShopCards",
@@ -25,7 +26,7 @@
             star: "4,2",
             testimonials: "9 отзывов",
             term: "879876",
-            available: "13 шт",
+            available: "13",
             priceCurrent: "47 999",
             priceOld: "53 999",
             article: "T1"
@@ -38,7 +39,7 @@
             star: "4,4",
             testimonials: "11 отзывов",
             term: "879877",
-            available: "6 шт",
+            available: "6",
             priceCurrent: "82 999",
             priceOld: "91 999",
             article: "T2"
@@ -51,7 +52,7 @@
             star: "4,1",
             testimonials: "14 отзывов",
             term: "879878",
-            available: "8 шт",
+            available: "8",
             priceCurrent: "70 999",
             priceOld: "78 999",
             article: "T3"
@@ -64,7 +65,7 @@
             star: "4,7",
             testimonials: "9 отзывов",
             term: "879879",
-            available: "9 шт",
+            available: "9",
             priceCurrent: "63 999",
             priceOld: "70 999",
             article: "T4"
@@ -77,7 +78,7 @@
             star: "4,6",
             testimonials: "105 отзывов",
             term: "879880",
-            available: "3 шт",
+            available: "3",
             priceCurrent: "29 999",
             priceOld: "33 999",
             article: "T5"
@@ -90,7 +91,7 @@
             star: "4,9",
             testimonials: "35 отзывов",
             term: "879881",
-            available: "2 шт",
+            available: "2",
             priceCurrent: "95 999",
             priceOld: "105 999",
             article: "T6"
@@ -103,7 +104,7 @@
             star: "5",
             testimonials: "8 отзывов",
             term: "879882",
-            available: "7 шт",
+            available: "7",
             priceCurrent: "39 999",
             priceOld: "42 999",
             article: "T7"
@@ -116,7 +117,7 @@
             star: "5",
             testimonials: "1 отзыв",
             term: "879883",
-            available: "7 шт",
+            available: "7",
             priceCurrent: "55 999",
             priceOld: "59 999",
             article: "T8"
@@ -129,7 +130,7 @@
             star: "4,8",
             testimonials: "35 отзывов",
             term: "879884",
-            available: "4 шт",
+            available: "4",
             priceCurrent: "43 999",
             priceOld: "49 999",
             article: "T9"
@@ -138,8 +139,11 @@
       }
     },
     methods: {
-      lol(data) {
-        console.log(data);
+      ...mapActions([
+        'ADD_TO_CARD'
+      ]),
+      addToCard(data) {
+        this.ADD_TO_CARD(data);
       },
     }
   }
