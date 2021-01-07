@@ -16,6 +16,8 @@
                   :key="item.article"
                   :card_item_data="item"
                   @deleteFromCard="deleteFromCard(index)"
+                  @increment="increment(index)"
+                  @decrement="decrement(index)"
           />
           <div class="cart-content__bottom">
             <div class="cart-content__fullprice">
@@ -51,15 +53,18 @@
       cardTotalCost() {
         let result = [];
 
-        for (let item of this.card_data) {
-          result.push(item.priceCurrent * item.quantity);
+        if(this.card_data.length) {
+          for (let item of this.card_data) {
+            result.push(item.priceCurrent * item.quantity);
+          }
+
+          result = result.reduce(function (sum, el) {
+            return sum + el;
+          });
+          return result;
+        } else {
+          return 0
         }
-
-        result = result.reduce(function (sum, el) {
-          return sum + el;
-        });
-
-        return result;
       },
     },
     props: {
@@ -72,10 +77,18 @@
     },
     methods: {
       ...mapActions([
-        'DELETE_FROM_CARD'
+        'DELETE_FROM_CARD',
+        'INCREMENT_CARD_ITEM',
+        'DECREMENT_CARD_ITEM',
       ]),
       deleteFromCard(index) {
         this.DELETE_FROM_CARD(index)
+      },
+      decrement(index) {
+        this.DECREMENT_CARD_ITEM(index);
+      },
+      increment(index) {
+        this.INCREMENT_CARD_ITEM(index);
       },
     }
   }
