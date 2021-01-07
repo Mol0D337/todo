@@ -1,6 +1,12 @@
 <template>
     <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
-      <i class="material-icons medium hover" style="color: #5d71dd; cursor: pointer; display: flex; justify-content: flex-end; width: 60px">shopping_cart</i>
+      <span class="header-actions__button-counter" v-if="CARD.length">{{CARD.length}}</span>
+      <i class="material-icons medium hover"
+         style="color: #5d71dd; cursor: pointer; display: flex; justify-content: flex-end; width: 60px"
+      >
+        shopping_cart
+      </i>
+
 
       <div class="cart-content" >
 
@@ -63,6 +69,27 @@
 </script>
 
 <style scoped>
+  .header-actions__button-counter {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    min-width: 20px;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #fb3f4c;
+    font-size: 80%;
+    font-weight: 700;
+    line-height: 20px;
+    color: #fff;
+  }
+
   .wrap-p {
     display: flex; align-items: center;padding: 20px 30px 30px;
   }
