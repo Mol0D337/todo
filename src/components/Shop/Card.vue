@@ -6,9 +6,10 @@
 
         <div v-if="CARD.length">
           <CardItem
-                  v-for="item in card_data"
+                  v-for="(item, index) in card_data"
                   :key="item.article"
                   :card_item_data="item"
+                  @deleteFromCard="deleteFromCard(index)"
           />
           <div class="cart-content__bottom">
             <div class="cart-content__fullprice">
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapGetters, mapActions} from 'vuex'
   import CardItem from "./CardItem";
   export default {
     name: "Card",
@@ -50,6 +51,14 @@
         }
       }
     },
+    methods: {
+      ...mapActions([
+        'DELETE_FROM_CARD'
+      ]),
+      deleteFromCard(index) {
+        this.DELETE_FROM_CARD(index)
+      },
+    }
   }
 </script>
 
