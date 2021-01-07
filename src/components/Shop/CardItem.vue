@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <i class="material-icons medium hover" style="color: #5d71dd; cursor: pointer">shopping_cart</i>
-    <div class="cart-content">
+  <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
+    <i class="material-icons medium hover" style="color: #5d71dd; cursor: pointer; display: flex; justify-content: flex-end; width: 60px">shopping_cart</i>
 
-      <div v-if="lol">123</div>
+    <div class="cart-content">
+      <div style="display: flex; align-items: center;padding: 20px 30px 30px;" v-if="lol">
+        <i class="material-icons medium" style="color: #00ba34">shopping_basket</i>
+        <div style="padding-left: 25px;">
+          <div style="margin-bottom: 14px;font-size: 150%;"> Ваша корзина пуста </div>
+          <div style="font-size: 13px;line-height: 16px;color: #666;"> Добавляйте понравившиеся товары в корзину</div>
+        </div>
+      </div>
 
       <div v-else>
         <ul class="cart-content__list" data-simplebar="init">
@@ -121,8 +127,14 @@
   }
 
   .cart-content {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    z-index: 99;
     cursor: default;
     width: 490px;
+    position: absolute;
+    top: 100%;
+    right: 0;
     background-color: #fff;
     box-shadow: 0px 4px 4px rgba(135, 135, 135, 0.25);
     opacity: 0;
@@ -176,6 +188,7 @@
     font-size: 14px;
     line-height: 20px;
     color: #4d4d4d;
+    margin-top: 0;
     margin-bottom: 18px;
   }
 
