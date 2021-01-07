@@ -34,8 +34,8 @@
         <span class="product__available">В наличии: {{product_data.available}} шт</span>
       </div>
       <div class="product__price product-price">
-        <span class="product-price__current">{{product_data.priceCurrent}} ₴</span>
-        <span class="product-price__old">{{product_data.priceOld}} ₴</span>
+        <span class="product-price__current">{{product_data.priceCurrent | priceFormat}} ₴</span>
+        <span class="product-price__old">{{product_data.priceOld | priceFormat}} ₴</span>
       </div>
       <button class="product__btn" @click="addToCard">Добавить в корзину</button>
     </article>
@@ -43,8 +43,12 @@
 </template>
 
 <script>
+  import priceFormat from '../../filters/priceFormat'
   export default {
     name: "ShopCard",
+    filters: {
+      priceFormat
+    },
     props: {
       product_data: {
         type: Object,

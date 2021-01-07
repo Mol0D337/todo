@@ -22,7 +22,7 @@
           <div class="cart-content__bottom">
             <div class="cart-content__fullprice">
               <span>Итого:</span>
-              <span class="fullprice">{{cardTotalCost}} ₴</span>
+              <span class="fullprice">{{cardTotalCost | priceFormat}} ₴</span>
             </div>
             <button class="cart-content__btn bbtn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
           </div>
@@ -41,11 +41,15 @@
 </template>
 
 <script>
+  import priceFormat from '../../filters/priceFormat'
   import {mapGetters, mapActions} from 'vuex'
   import CardItem from "./CardItem";
   export default {
     name: "Card",
     components: {CardItem},
+    filters: {
+      priceFormat
+    },
     computed: {
       ...mapGetters([
         'CARD'
