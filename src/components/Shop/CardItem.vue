@@ -22,9 +22,9 @@
                         <div class="cart-product__price" >{{card_item_data.priceCurrent | priceFormat}} ₴</div>
 
                         <div class="lol-l">
-                          <div class="decr" @click="decrementItem">-</div>
+                          <div class="decr decr-active" @click="decrementItem">-</div>
                           <div class="bord">{{card_item_data.quantity}}</div>
-                          <div class="decr" @click="incrementItem">+</div>
+                          <div class="incr" @click="incrementItem">+</div>
                         </div>
 
                       </div>
@@ -105,6 +105,21 @@
     margin-top: -5px;
     color: #5d71dd;
     font-size: 24px;
+  }
+
+  .incr {
+    cursor: pointer;
+    margin-top: -5px;
+    color: #5d71dd;
+    font-size: 24px;
+  }
+
+  .decr-active {
+    color: #d2d2d2;
+  }
+
+  .incr-active {
+    color: #d2d2d2;
   }
 
   .wrap-p {

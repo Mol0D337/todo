@@ -66,11 +66,21 @@ export default {
     state.card.splice(index, 1)
   },
   INCREMENT: (state, index) => {
-    state.card[index].quantity++
+    if (state.card[index].available > state.card[index].quantity) {
+      state.card[index].quantity++;
+      document.querySelector('.decr').classList.remove('decr-active');
+    }
+    if (state.card[index].available == state.card[index].quantity) {
+      document.querySelector('.incr').classList.add('incr-active')
+    }
   },
   DECREMENT: (state, index) => {
     if(state.card[index].quantity > 1) {
-      state.card[index].quantity--
+      state.card[index].quantity--;
+      document.querySelector('.incr').classList.remove('incr-active');
+    }
+    if (state.card[index].quantity == 1) {
+      document.querySelector('.decr').classList.add('decr-active')
     }
   },
 }
