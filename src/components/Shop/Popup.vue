@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="isPopup ? '' : 'w-wrap-p' "  ref="popupWrap">
 
     <div class="modal__container order-modal modal-open fadeInUp animate-open" role="dialog" aria-modal="true" data-graph-target="modal">
       <div class="modal-content order-modal__content">
@@ -60,7 +60,6 @@
       </div>
     </div>
 
-
   </div>
 </template>
 
@@ -72,10 +71,28 @@
         this.$emit('closePopup')
       }
     },
+    mounted() {
+      let vm = this;
+      document.addEventListener('click', function (item) {
+        if (item.target === vm.$refs['popupWrap']) {
+          vm.closePopup();
+        }
+      })
+    }
   }
 </script>
 
 <style scoped>
+  .w-wrap-p {
+    background: rgba(0, 0, 0, .85);
+    z-index: 99999;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   .bbtn {
     border: none;
     padding: 14px 0;
@@ -93,7 +110,6 @@
     min-height: 542px;
 
     border-radius: 10px;
-    border: 4px solid;
     background: #fff;
     position: absolute;
     z-index: 999;
