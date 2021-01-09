@@ -1,12 +1,17 @@
 <template>
     <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
+
+      <Popup
+        v-if="isPopup"
+        @closePopup="closePopup"
+      />
+
       <span class="header-actions__button-counter" v-if="CARD.length">{{CARD.length}}</span>
       <i class="material-icons medium hover"
          style="color: #5d71dd; cursor: pointer; display: flex; justify-content: flex-end; width: 60px"
       >
         shopping_cart
       </i>
-
 
       <div class="cart-content" >
 
@@ -24,7 +29,13 @@
               <span>Итого:</span>
               <span class="fullprice">{{cardTotalCost | priceFormat}} ₴</span>
             </div>
-            <button class="cart-content__btn bbtn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
+            <button class="cart-content__btn bbtn"
+                    data-graph-path="modal"
+                    data-graph-animation="fadeInUp"
+                    @click="showPopup"
+            >
+              Перейти в корзину
+            </button>
           </div>
         </div>
 
@@ -44,9 +55,15 @@
   import priceFormat from '../../filters/priceFormat'
   import {mapGetters, mapActions} from 'vuex'
   import CardItem from "./CardItem";
+  import Popup from "./Popup";
   export default {
     name: "Card",
-    components: {CardItem},
+    components: {Popup, CardItem},
+    data() {
+      return {
+        isPopup: true,
+      }
+    },
     filters: {
       priceFormat
     },
@@ -87,12 +104,18 @@
       deleteFromCard(index) {
         this.DELETE_FROM_CARD(index)
       },
-
       decrement(index) {
         this.DECREMENT_CARD_ITEM(index);
       },
       increment(index) {
         this.INCREMENT_CARD_ITEM(index);
+      },
+
+      showPopup() {
+        this.isPopup = true;
+      },
+      closePopup() {
+        this.isPopup = false;
       },
     }
   }
