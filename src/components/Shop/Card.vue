@@ -2,8 +2,8 @@
     <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
 
       <Popup
-        v-if="isPopup"
-        @closePopup="closePopup"
+              v-if="isPopup"
+              @closePopup="closePopup"
       />
 
       <span class="header-actions__button-counter" v-if="CARD.length">{{CARD.length}}</span>
@@ -122,6 +122,7 @@
 </script>
 
 <style scoped>
+
   .header-actions__button-counter {
     cursor: pointer;
     position: absolute;
