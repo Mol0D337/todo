@@ -130,21 +130,6 @@
     display: block;
     width: auto;
   }
-  .order-modal__products::-webkit-scrollbar {
-    width: 4px;
-    height: 5px;
-    background-color: rgba(77, 77, 77, 0.1);
-  }
-
-  .order-modal__products::-webkit-scrollbar-thumb {
-    border-radius: 99px;
-    background-color: #d1d1d1;
-  }
-
-
-
-
-
 
   .w-wrap-p {
     background: rgba(0, 0, 0, .85);
