@@ -1,23 +1,29 @@
 <template>
   <div class="products-grid__item">
     <article class="product">
-      <a href="#" class="product__image">
-        <div class="product__switch image-switch" >
-          <div class="image-switch__item" >
-            <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl1) " alt="Макбук"></div>
+      <div style="cursor: pointer;" @click="productClick">
+
+        <div class="product__image">
+          <div class="product__switch image-switch" >
+            <div class="image-switch__item" >
+              <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl1) " alt="Макбук"></div>
+            </div>
+            <div class="image-switch__item" >
+              <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl2) " alt="Макбук"></div>
+            </div  >
+            <div class="image-switch__item" >
+              <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl3) " alt="Макбук"></div>
+            </div>
           </div>
-          <div class="image-switch__item" >
-            <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl2) " alt="Макбук"></div>
-          </div  >
-          <div class="image-switch__item" >
-            <div class="image-switch__img"><img :src=" require('../../assets/image/' + product_data.imageUrl3) " alt="Макбук"></div>
-          </div>
+          <ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
         </div>
-        <ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
-      </a>
-      <h3 class="product__title">
-        <a href="#">{{product_data.title}}</a>
-      </h3>
+        <h3 class="product__title">
+          <div>{{product_data.title}}</div>
+        </h3>
+
+      </div>
+
+
       <div class="product__props">
         <span class="product__rating">
     <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +71,9 @@
       addToCard() {
         this.$emit('addToCard',this.product_data)
       },
+      productClick() {
+        this.$emit('productClick', this.product_data.term)
+      }
     },
   }
 </script>
