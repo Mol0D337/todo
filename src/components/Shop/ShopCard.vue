@@ -1,7 +1,7 @@
 <template>
   <div class="products-grid__item">
     <article class="product">
-      <div style="cursor: pointer;" @click="productClick">
+      <div style="cursor: pointer;">
 
         <div class="product__image">
           <div class="product__switch image-switch" >
@@ -71,9 +71,6 @@
       addToCard() {
         this.$emit('addToCard',this.product_data)
       },
-      productClick() {
-        this.$emit('productClick', this.product_data.term)
-      }
     },
   }
 </script>

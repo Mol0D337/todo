@@ -5,7 +5,6 @@
             :key="product.article"
             :product_data="product"
             @addToCard="addToCard"
-            @productClick="productClick"
     />
   </div>
 </template>
@@ -145,9 +144,6 @@
       ]),
       addToCard(data) {
         this.ADD_TO_CARD(data);
-      },
-      productClick(term) {
-        this.$router.push( {name: 'shop', query: { 'product': term}} );
       },
     }
   }

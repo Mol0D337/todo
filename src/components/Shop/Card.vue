@@ -16,14 +16,17 @@
       <div class="cart-content" >
 
         <div v-if="CARD.length">
-          <CardItem
-                  v-for="(item, index) in card_data"
-                  :key="item.article"
-                  :card_item_data="item"
-                  @deleteFromCard="deleteFromCard(index)"
-                  @increment="increment(index)"
-                  @decrement="decrement(index)"
-          />
+          <div class="order-modal__products">
+            <CardItem
+                    v-for="(item, index) in card_data"
+                    :key="item.article"
+                    :card_item_data="item"
+                    @deleteFromCard="deleteFromCard(index)"
+                    @increment="increment(index)"
+                    @decrement="decrement(index)"
+            />
+          </div>
+
           <div class="cart-content__bottom">
             <div class="cart-content__fullprice">
               <span>Итого:</span>
@@ -122,6 +125,16 @@
 </script>
 
 <style scoped>
+  .order-modal__products {
+    max-height: 320px;
+    overflow: hidden scroll;
+    direction: inherit;
+    box-sizing: border-box !important;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
 
   .header-actions__button-counter {
     cursor: pointer;
