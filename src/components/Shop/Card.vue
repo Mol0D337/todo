@@ -61,7 +61,7 @@
     components: {Popup, CardItem},
     data() {
       return {
-        isPopup: true,
+        isPopup: false,
       }
     },
     filters: {

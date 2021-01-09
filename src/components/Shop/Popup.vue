@@ -9,25 +9,23 @@
           <span class="order-modal__number">Заказ № 345667</span>
         </div>
         <div class="order-modal__info">
-          <div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>2 шт</span></div>
-          <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>381 578 ₽</span></div>
+          <div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>{{CARD.length}} шт</span></div>
+          <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>{{cardTotalCost | priceFormat}} ₴</span></div>
           <div class="order-modal__products order-modal__info-item">
-            <button class="order-modal__btn">Состав заказа</button>
-            <ul class="order-modal__list" style="display: block;">
+            <div style="display: flex; align-items: center; cursor: pointer" @click="arrow = !arrow">
+              <button class="order-modal__btn">Состав заказа</button>
+              <i class="material-icons" style="color: #5d71dd" v-if="arrow">arrow_drop_down</i>
+              <i class="material-icons" style="color: #5d71dd" v-else>arrow_drop_up</i>
+            </div>
 
-              <li class="order-modal__item">
-                <article class="order-modal__product order-product" data-id="1">
-                  <img src="../../assets/image/macbook.jpg" alt="" class="order-product__img">
-                  <div class="order-product__text">
-                    <h3 class="order-product__title">
-                      Ноутбук Apple MacBook Pro 16 TB i7 2.6/16/512 SSD SG MVVJ2RU/A
-                    </h3>
-                    <span class="order-product__price">190 789₽</span>
-                  </div>
-                  <button class="order-product__delete">Удалить</button>
-                </article>
-              </li>
-            </ul>
+            <PopupItem
+                    v-if="arrow"
+                    v-for="(item, index) in CARD"
+                    :key="item.article"
+                    :popup_item_data="item"
+                    @deleteFromCard="deleteFromCard(index)"
+            />
+
           </div>
         </div>
         <form action="#" class="order-modal__form order">
@@ -64,12 +62,52 @@
 </template>
 
 <script>
+  import priceFormat from '../../filters/priceFormat'
+  import {mapGetters, mapActions} from 'vuex'
+  import CardItem from "./CardItem";
+  import PopupItem from "./PopupItem";
   export default {
     name: "Popup",
+    components: {PopupItem, CardItem},
+    data() {
+      return {
+        arrow: true
+      }
+    },
+    filters: {
+      priceFormat
+    },
     methods: {
       closePopup() {
         this.$emit('closePopup')
-      }
+      },
+      ...mapActions([
+        'DELETE_FROM_CARD',
+      ]),
+      deleteFromCard(index) {
+        this.DELETE_FROM_CARD(index)
+      },
+
+    },
+    computed: {
+      ...mapGetters([
+        'CARD'
+      ]),
+      cardTotalCost() {
+        let result = [];
+
+        if(this.CARD.length) {
+          for (let item of this.CARD) {
+            result.push(item.priceCurrent * item.quantity);
+          }
+          result = result.reduce(function (sum, el) {
+            return sum + el;
+          });
+          return result;
+        } else {
+          return 0
+        }
+      },
     },
     mounted() {
       let vm = this;
@@ -108,14 +146,12 @@
     padding: 40px;
     width: 592px;
     min-height: 542px;
-
     border-radius: 10px;
     background: #fff;
-    position: absolute;
+    position: fixed;
     z-index: 999;
-    top: 13%;
-    left: 18%;
-    transform: translate(18%, 13%);
+    top: 5%;
+    left: 33%;
   }
 
   .order-modal__top {
@@ -180,7 +216,6 @@
     transform: translateY(-50%);
     width: 7px;
     height: 7px;
-    background-image: url("../../assets/image/arrow-down.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -250,6 +285,7 @@
   }
 
   .order-product__title {
+    margin-top: 0;
     margin-bottom: 5px;
     font-weight: 400;
     font-size: 14px;
