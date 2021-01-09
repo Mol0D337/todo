@@ -22,7 +22,7 @@
                         <div class="cart-product__price" >{{card_item_data.priceCurrent | priceFormat}} ₴</div>
 
                         <div class="lol-l">
-                          <div class="decr decr-active" @click="decrementItem">-</div>
+                          <div class="decr" @click="decrementItem">-</div>
                           <div class="bord">{{card_item_data.quantity}}</div>
                           <div class="incr" @click="incrementItem">+</div>
                         </div>
