@@ -61,7 +61,6 @@
           for (let item of this.card_data) {
             result.push(item.priceCurrent * item.quantity);
           }
-
           result = result.reduce(function (sum, el) {
             return sum + el;
           });
