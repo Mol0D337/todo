@@ -11,50 +11,50 @@
         <div class="order-modal__info">
           <div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>{{CARD.length}} шт</span></div>
           <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>{{cardTotalCost | priceFormat}} ₴</span></div>
-          <div class="order-modal__products order-modal__info-item">
+          <div class=" order-modal__info-item">
             <div style="display: flex; align-items: center; cursor: pointer" @click="arrow = !arrow">
               <button class="order-modal__btn">Состав заказа</button>
               <i class="material-icons" style="color: #5d71dd" v-if="arrow">arrow_drop_down</i>
               <i class="material-icons" style="color: #5d71dd" v-else>arrow_drop_up</i>
             </div>
 
-            <PopupItem
-                    v-if="arrow"
-                    v-for="(item, index) in CARD"
-                    :key="item.article"
-                    :popup_item_data="item"
-                    @deleteFromCard="deleteFromCard(index)"
-            />
+            <div class="order-modal__products">
+              <PopupItem
+                      v-if="arrow"
+                      v-for="(item, index) in CARD"
+                      :key="item.article"
+                      :popup_item_data="item"
+                      @deleteFromCard="deleteFromCard(index)"
+              />
+            </div>
+
 
           </div>
         </div>
-        <form action="#" class="order-modal__form order">
-          <input type="hidden" name="theme" value="Обратный звонок">
-          <input type="hidden" name="admin_email[]" value="maxgraph23@gmail.com">
-          <input type="hidden" name="form_subject" value="Заявка с сайта Сайт">
+        <div class="order-modal__form order">
           <label class="order__label">
             <span class="order__text">Ваше имя</span>
-            <input type="text" name="Имя" class="order__input"
+            <input required type="text" class="order__input"
                    style="padding-left: 14px;padding-right: 14px;width: 240px;
                    height: 45px;background: #efefef;border-radius: 4px;border: none; margin: 0; outline-color: #ffffff;"
             >
           </label>
           <label class="order__label">
             <span class="order__text">Номер телефона</span>
-            <input type="tel" name="Телефон" class="order__input"
+            <input required type="tel" class="order__input"
                    style="padding-left: 14px;padding-right: 14px;width: 240px;
                    height: 45px;background: #efefef;border-radius: 4px;border: none;  margin: 0; outline-color: #ffffff;"
                    placeholder="+38 (___)___-__-__">
           </label>
           <label class="order__label">
             <span class="order__text">Ваша почта</span>
-            <input type="email" name="Email" class="order__input" placeholder="post@gmail.com"
+            <input required type="email" class="order__input" placeholder="useremail@gmail.com"
                    style="padding-left: 14px;padding-right: 14px;width: 240px;
                    height: 45px;background: #efefef;border-radius: 4px;border: none; margin: 0; outline-color: #ffffff;"
             >
           </label>
-          <button class="order__btn bbtn">Оформить заказ</button>
-        </form>
+          <button class="order__btn bbtn" >Оформить заказ</button>
+        </div>
       </div>
     </div>
 
