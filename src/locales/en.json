@@ -25,5 +25,12 @@
     "NoTasks": "No tasks",
     "Previous": "Previous",
     "Next": "Next"
+  },
+  "any": {
+    "tol": "Need to erase",
+    "Email": "Email",
+    "Password": "Password",
+    "Login": "Login",
+    "Registration": "Registration"
   }
 }

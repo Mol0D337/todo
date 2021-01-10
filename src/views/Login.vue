@@ -8,7 +8,7 @@
 
           <div class="btn-n">
             <Scratchable/>
-            <span class="tooltip-p right_tooltip-p">Необходимо стереть</span>
+            <span class="tooltip-p right_tooltip-p">{{$t('any.tol')}}</span>
           </div>
 
         </div>
@@ -37,16 +37,16 @@
 
               <div class="input-field" style="width: 400px">
                 <input id="email" type="email" class="validate" v-model="email" @focus="updateMouthEyes" @blur="blurEmail" required>
-                <label for="email">Email</label>
+                <label for="email">{{$t('any.Email')}}</label>
               </div>
 
               <div class="input-field" style="width: 400px">
                 <input id="password" type="password" minlength="6" required class="validate" v-model="password" @focus="focusPassword" @blur="blurPassword">
-                <label for="password">Password</label>
+                <label for="password">{{$t('any.Password')}}</label>
               </div>
 
               <div class="btn__center">
-                <button type="submit" class="btn" style="border-radius: 5px; width: 100px">Login</button>
+                <button type="submit" class="btn" style="border-radius: 5px; width: 100px">{{$t('any.Login')}}</button>
               </div>
 
 
@@ -55,7 +55,7 @@
                       to="/registration"
                       class="reg__text"
               >
-                Registration
+                {{$t('any.Registration')}}
               </router-link>
 
             </div>
