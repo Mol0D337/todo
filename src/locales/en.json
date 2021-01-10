@@ -1,5 +1,10 @@
 {
-  "test": {
-    "test": "test"
+  "create": {
+    "createTask": "CREATE TASK",
+    "title": "Title",
+    "required": "Title is required",
+    "description": "Description",
+    "create": "Create",
+    "tags": "Task tags"
   }
 }

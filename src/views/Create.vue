@@ -5,19 +5,19 @@
       <div class="entry__wrapper">
 
         <form @submit.prevent="submitHandler" style="width: 600px">
-          <div class="h1">CREATE TASK</div>
+          <div class="h1">{{$t('create.createTask')}}</div>
 
           <div class="input-field">
             <input id="title" v-model="title" type="text" class="validate" required>
-            <label for="title">Title</label>
-            <span class="helper-text" data-error="Title is required"></span>
+            <label for="title">{{$t('create.title')}}</label>
+            <span class="helper-text" :data-error="$t('create.required')"></span>
           </div>
 
           <div class="chips" ref="chips"></div>
 
           <div class="input-field" style="margin-top: 20px">
             <textarea maxlength="120" v-model="description" id="description" class="materialize-textarea"></textarea>
-            <label for="description">Description</label>
+            <label for="description">{{$t('create.description')}}</label>
             <div class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</div>
           </div>
 
@@ -28,7 +28,7 @@
             <button style="margin-top: 25px; border-radius: 5px; width: 100px"
                     class="btn waves-effect" type="submit" name="action"
             >
-              Create
+              {{$t('create.create')}}
             </button>
           </div>
 
@@ -62,7 +62,7 @@
     }),
     mounted() {
       this.chips = M.Chips.init(this.$refs.chips, {
-        placeholder: 'Task tags'
+        placeholder: 'Tags'
       });
       this.date = M.Datepicker.init(this.$refs.datepicker, {
         format: 'dd.mm.yyyy',
