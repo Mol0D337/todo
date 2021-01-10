@@ -176,7 +176,7 @@
   .container {
     /* max-width: 1234px; */
     width: 1244px;
-    padding: 40px 20px 0;
+    padding: 40px 20px;
     margin: 0 auto;
   }
 
