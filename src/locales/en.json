@@ -31,6 +31,14 @@
     "Email": "Email",
     "Password": "Password",
     "Login": "Login",
-    "Registration": "Registration"
+    "Registration": "Registration",
+    "prof": "YOUR PROFILE",
+    "name": "Name",
+    "surname": "Surname",
+    "gender": "Gender",
+    "age": "Age",
+    "work": "Position",
+    "comp": "Company",
+    "exit": "exit"
   }
 }

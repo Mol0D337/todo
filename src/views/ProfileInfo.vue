@@ -7,8 +7,7 @@
 
         <div  style="width: 600px">
 
-          <div class="h1">ВАШ ПРОФИЛЬ</div>
-          <div class="h1">{{$t('test.test')}}</div>
+          <div class="h1">{{$t('any.prof')}}</div>
 
           <div >
             <div
@@ -23,29 +22,29 @@
                 <div class="profile-l-r">
                   <div class="profile-left">
                     <div class="profile__margin">
-                      <label class="label__text">Имя</label>
+                      <label class="label__text">{{$t('any.name')}}</label>
                       <div class="div__text">{{profile.email | toUpperCase}}</div>
                     </div>
                     <div class="profile__margin">
-                      <label class="label__text">Фамилия</label>
+                      <label class="label__text">{{$t('any.surname')}}</label>
                       <div class="div__text">{{profile.surname | toUpperCase}}</div>
                     </div>
                     <div class="profile__margin">
-                      <label class="label__text">Пол</label>
+                      <label class="label__text">{{$t('any.gender')}}</label>
                       <div class="div__text">{{profile.gender | toUpperCase}}</div>
                     </div>
                   </div>
                   <div class="profile-right">
                     <div class="profile__margin">
-                      <label class="label__text">Возраст</label>
+                      <label class="label__text">{{$t('any.age')}}</label>
                       <div class="div__text">{{profile.age}}</div>
                     </div>
                     <div class="profile__margin">
-                      <label class="label__text">Должность</label>
+                      <label class="label__text">{{$t('any.work')}}</label>
                       <div class="div__text">{{profile.opinion | toUpperCase}}</div>
                     </div>
                     <div class="profile__margin">
-                      <label class="label__text">Компания</label>
+                      <label class="label__text">{{$t('any.comp')}}</label>
                       <div class="div__text">{{profile.company}}</div>
                     </div>
                   </div>
@@ -70,7 +69,7 @@
                         style="margin-top: -27px; border-radius: 5px; width: 100px; margin-left: 180px;"
                         class="btn waves-effect"  name="action"
                 >
-                  exit
+                  {{$t('any.exit')}}
                 </button>
               </div>
 
