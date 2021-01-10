@@ -50,6 +50,7 @@
                   :key="product.article"
                   :product_data="product"
                   @addToCard="addToCard"
+                  @productClick="productClick"
           />
         </div>
 
@@ -88,6 +89,9 @@
       ...mapActions([
         'ADD_TO_CARD'
       ]),
+      productClick(term) {
+        this.$router.push( {name: 'product', query: { 'product': term }})
+      },
       addToCard(data) {
         this.ADD_TO_CARD(data);
       },
