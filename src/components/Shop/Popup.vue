@@ -31,7 +31,7 @@
 
           </div>
         </div>
-        <div class="order-modal__form order">
+        <form @submit.prevent="submitForm" class="order-modal__form order">
           <label class="order__label">
             <span class="order__text">Ваше имя</span>
             <input required type="text" class="order__input"
@@ -53,8 +53,8 @@
                    height: 45px;background: #efefef;border-radius: 4px;border: none; margin: 0; outline-color: #ffffff;"
             >
           </label>
-          <button class="order__btn bbtn" >Оформить заказ</button>
-        </div>
+          <button class="order__btn bbtn" type="submit">Оформить заказ</button>
+        </form>
       </div>
     </div>
 
@@ -78,6 +78,9 @@
       priceFormat
     },
     methods: {
+      submitForm() {
+        alert('Не думаю что вам кто-то перезвонит, но и не важно:D')
+      },
       closePopup() {
         this.$emit('closePopup')
       },
