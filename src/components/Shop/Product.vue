@@ -19,8 +19,10 @@
         <div class="product__term">Артикул: {{productKek.term}}</div>
       </div>
 
-      <div style="display: flex; align-items: center; ">
-        <div class="product__image" style="margin-right: 100px">
+      <div class="lol-kek" style="margin-bottom: 40px;"></div>
+
+      <div style="display: flex; align-items: center; justify-content: space-around">
+        <div class="product__image" style="">
           <div class="product__switch image-switch" >
             <div class="image-switch__item" >
               <div class="image-switch__img"><img :src=" require('../../assets/image/' + productKek.imageUrl3) " alt="Макбук"></div>
@@ -35,18 +37,21 @@
           <ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
         </div>
 
-        <div >
+        <div style="width: 500px;height: 500px; padding-top: 100px">
           <div class="product__info">
             <span class="product__available">В наличии: {{productKek.available}} шт</span>
           </div>
           <div class="product__price product-price">
-            <span class="product-price__current">{{productKek.priceCurrent | priceFormat}} ₴</span>
+            <span class="product-price__current" style="color: #00695c">{{productKek.priceCurrent | priceFormat}} ₴</span>
           </div>
-          <button class="product__btn">Купить</button>
+
+          <div style="font-size: 16px; color: #808080; margin-top: 30px">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet at dolores, ducimus facere fugiat nihil totam. Cumque debitis ipsa itaque laudantium magni necessitatibus officiis saepe. Ab accusamus quae quam sapiente voluptas. A aliquam cupiditate deleniti ea, explicabo ipsa maiores molestiae odit quasi quia ratione rerum similique tenetur veritatis voluptatum.
+          </div>
         </div>
       </div>
 
-
+      <div class="lol-kek" style="margin-top: 40px;"></div>
 
     </div>
 
@@ -123,6 +128,14 @@
 
   .product:hover {
     box-shadow: 0 2px 16px rgba(0,0,0,.24);
+  }
+
+  .lol-kek {
+    transform: translateX(-50px);
+    background-color: #f5f5f5;
+    width: 110vw;
+    height: 20px;
+
   }
 
   .product__image {
