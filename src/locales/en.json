@@ -12,7 +12,8 @@
     "back": "back",
     "Update": "Update",
     "Complete": "Complete task",
-    "found": "Task not found"
+    "found": "Task not found",
+    "write": "PUMP AND WRITE SOMETHING HERE ..."
   },
   "list": {
     "option": "Choose your option",
