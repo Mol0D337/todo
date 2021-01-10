@@ -1,6 +1,6 @@
 <template>
   <div class="bcg">
-    <div style="height: 64px; width: 100%; background: #00695c"></div>
+    <div style="height: 64px; width: 100%; background: rgb(39, 39, 60);"></div>
     <div class="list__wrapper">
       <div class="h1">LIST</div>
       <div class="row" style="margin: 0 20px">
@@ -173,7 +173,7 @@ export default {
 
   .pagination-item:hover,
   .pagination-item.is-active
-    background-color: #00695c
+    background: rgb(39, 39, 60)
     border-right: 1px solid #fff
 
     .pagination-link
