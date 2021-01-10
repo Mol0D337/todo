@@ -1,5 +1,29 @@
 {
-  "test": {
-    "test": "test"
+  "create": {
+    "createTask": "CREATE TASK",
+    "title": "Title",
+    "required": "Title is required",
+    "description": "Description",
+    "create": "Create",
+    "tags": "Task tags",
+    "list": "List",
+    "shop": "shop",
+    "profile": "profile",
+    "back": "back",
+    "Update": "Update",
+    "Complete": "Complete task",
+    "found": "Task not found",
+    "write": "PUMP AND WRITE SOMETHING HERE ..."
+  },
+  "list": {
+    "option": "Choose your option",
+    "Active" : "Active",
+    "Outdated": "Outdated",
+    "Completed": "Completed",
+    "filter": "Status filter",
+    "Clear": "Clear filter",
+    "NoTasks": "No tasks",
+    "Previous": "Previous",
+    "Next": "Next"
   }
 }

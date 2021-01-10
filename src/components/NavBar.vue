@@ -9,7 +9,7 @@
                 exact
                 style="width: 100px;text-align: center"
         >
-          <a href="#">Create</a>
+          <a href="#">{{$t('create.create')}}</a>
         </router-link>
         <router-link
                 tag="li"
@@ -17,7 +17,7 @@
                 exact
                 style="width: 100px;text-align: center"
         >
-          <a href="#">list</a>
+          <a href="#">{{$t('create.list')}}</a>
         </router-link>
       </ul>
 
@@ -35,7 +35,7 @@
                 exact
                 style="width: 100px;text-align: center"
         >
-          <a href="#">shop</a>
+          <a href="#">{{$t('create.shop')}}</a>
         </router-link>
         <router-link
                 tag="li"
@@ -43,7 +43,7 @@
                 exact
                 style="width: 100px;text-align: center"
         >
-          <a href="#">Profile</a>
+          <a href="#">{{$t('create.profile')}}</a>
         </router-link>
       </ul>
     </div>
