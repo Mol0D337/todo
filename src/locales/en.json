@@ -9,5 +9,16 @@
     "list": "List",
     "shop": "shop",
     "profile": "profile"
+  },
+  "list": {
+    "option": "Choose your option",
+    "Active" : "Active",
+    "Outdated": "Outdated",
+    "Completed": "Completed",
+    "filter": "Status filter",
+    "Clear": "Clear filter",
+    "NoTasks": "No tasks",
+    "Previous": "Previous",
+    "Next": "Next"
   }
 }

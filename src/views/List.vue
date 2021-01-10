@@ -2,19 +2,19 @@
   <div class="bcg">
     <div style="height: 64px; width: 100%; background: rgb(39, 39, 60);"></div>
     <div class="list__wrapper">
-      <div class="h1">LIST</div>
+      <div class="h1" style="text-transform: uppercase"> {{$t('create.list')}}</div>
       <div class="row" style="margin: 0 20px">
         <div class="input-field col s12 ">
           <select ref="select" v-model="filter">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="active">Active</option>
-            <option value="outdated">Outdated</option>
-            <option value="completed">Completed</option>
+            <option value="" disabled selected>{{$t('list.option')}}</option>
+            <option value="active">{{$t('list.Active')}}</option>
+            <option value="outdated">{{$t('list.Outdated')}}</option>
+            <option value="completed">{{$t('list.Completed')}}</option>
           </select>
-          <label>Status filter</label>
+          <label>{{$t('list.filter')}}</label>
         </div>
       </div>
-      <button style="margin-left: 30px" v-if="filter" class="btn btn-small red" @click="filter = null">Clear filter</button>
+      <button style="margin-left: 30px" v-if="filter" class="btn btn-small red" @click="filter = null">{{$t('list.Clear')}}</button>
     </div>
 
 
@@ -43,11 +43,11 @@
 
       </div>
     </div>
-    <h5 v-else style="text-align: center" >No tasks</h5>
+    <h5 v-else style="text-align: center" >{{$t('list.NoTasks')}}</h5>
 
     <div v-if="tasks.length" class="pagination__container">
       <div class="pagination">
-        <div @click="btnPrev" class="pagination-item--wide first"> <div class="pagination-link--wide first">Previous</div> </div>
+        <div @click="btnPrev" class="pagination-item--wide first"> <div class="pagination-link--wide first">{{$t('list.Previous')}}</div> </div>
 
         <div class="pagination-item"
              v-for="page in pages"
@@ -58,7 +58,7 @@
           <div class="pagination-link">{{page}}</div>
         </div>
 
-        <div @click="btnNext" class="pagination-item--wide last"> <div class="pagination-link--wide last">Next</div> </div>
+        <div @click="btnNext" class="pagination-item--wide last"> <div class="pagination-link--wide last">{{$t('list.Next')}}</div> </div>
       </div>
     </div>
 
