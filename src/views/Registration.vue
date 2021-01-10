@@ -28,16 +28,16 @@
 
               <div class="input-field" style="width: 400px">
                 <input id="email" type="email" class="validate" v-model="email" @focus="updateMouthEyes" @blur="blurEmail" required>
-                <label for="email">Email</label>
+                <label for="email">{{$t('any.Email')}}</label>
               </div>
 
               <div class="input-field" style="width: 400px">
                 <input id="password" type="password" minlength="6" required class="validate" v-model="password" @focus="focusPassword" @blur="blurPassword">
-                <label for="password">Password</label>
+                <label for="password">{{$t('any.Password')}}</label>
               </div>
 
               <div class="btn__center">
-                <button type="submit" class="btn" style="border-radius: 5px; width: 130px">Registration</button>
+                <button type="submit" class="btn" style="border-radius: 5px; width: 130px">{{$t('any.Registration')}}</button>
               </div>
 
 
@@ -46,7 +46,7 @@
                       to="/profile"
                       class="reg__text"
               >
-                Login
+                {{$t('any.Login')}}
               </router-link>
 
             </div>
