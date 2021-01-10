@@ -8,7 +8,11 @@
     "tags": "Task tags",
     "list": "List",
     "shop": "shop",
-    "profile": "profile"
+    "profile": "profile",
+    "back": "back",
+    "Update": "Update",
+    "Complete": "Complete task",
+    "found": "Task not found"
   },
   "list": {
     "option": "Choose your option",

@@ -12,7 +12,7 @@
 
           <div class="input-field">
             <textarea maxlength="120" style="min-height: 150px" v-model="description" id="description" class="materialize-textarea"></textarea>
-            <label for="description">Description</label>
+            <label for="description">{{$t('create.description')}}</label>
             <span class="character-counter" style="float: right; font-size: 12px;">{{description.length}}/120</span>
           </div>
 
@@ -23,15 +23,15 @@
               <router-link
                       to="/list"
               >
-                <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem; width: 100px">back</button>
+                <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem; width: 100px">{{$t('create.back')}}</button>
               </router-link>
-              <button class="btn waves-effect" type="submit" style="margin-right: 1rem; width: 100px">Update</button>
-              <button class="btn blue waves-effect" type="button" @click="completeTask">Complete task</button>
+              <button class="btn waves-effect" type="submit" style="margin-right: 1rem; width: 110px">{{$t('create.Update')}}</button>
+              <button class="btn blue waves-effect" type="button" @click="completeTask">{{$t('create.Complete')}}</button>
             </div>
           </div>
         </form>
       </div>
-      <p v-else>Task not found</p>
+      <p v-else>{{$t('create.found')}}</p>
     </div>
 
     <div class="waveWrapperInner bgTop">
@@ -62,7 +62,7 @@ export default {
   mounted() {
     this.description = this.task.description;
     this.chips = M.Chips.init(this.$refs.chips, {
-      placeholder: 'Task tags',
+      placeholder: 'Tags',
       data: this.task.tags
     });
     this.date = M.Datepicker.init(this.$refs.datepicker, {
