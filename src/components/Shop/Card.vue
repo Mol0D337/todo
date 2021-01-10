@@ -1,5 +1,5 @@
 <template>
-    <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 70px">
+    <div style="position: relative; display: flex; justify-content: flex-end; margin-bottom: 30px">
 
       <Popup
               v-if="isPopup"
