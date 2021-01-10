@@ -79,7 +79,8 @@
     },
     methods: {
       submitForm() {
-        alert('Не думаю что вам кто-то перезвонит, но и не важно:D')
+        alert('Не думаю что вам кто-то перезвонит, но и не важно:D');
+        this.closePopup()
       },
       closePopup() {
         this.$emit('closePopup')
