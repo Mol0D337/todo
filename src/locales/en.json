@@ -5,6 +5,9 @@
     "required": "Title is required",
     "description": "Description",
     "create": "Create",
-    "tags": "Task tags"
+    "tags": "Task tags",
+    "list": "List",
+    "shop": "shop",
+    "profile": "profile"
   }
 }
