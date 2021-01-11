@@ -87,7 +87,6 @@
         setTimeout(function(){
           location.reload()
         }, 1800);
-        this.$router.push('/profile');
       }
     }
   }

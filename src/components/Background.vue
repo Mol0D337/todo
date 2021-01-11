@@ -46,7 +46,7 @@
     background-color: #fff;
     padding: 0.5rem 1rem;
     filter: url(#goo);
-    opacity: 50%;
+    opacity: .6;
   }
 
   .goo:focus {
