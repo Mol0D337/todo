@@ -81,7 +81,7 @@
           date: this.date.date
         };
         this.$store.dispatch('createTask', task);
-        this.$router.push('/list')
+        this.$router.push('/test')
       }
     },
     destroyed() {
