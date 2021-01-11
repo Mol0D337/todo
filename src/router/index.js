@@ -41,14 +41,14 @@ export default new Router({
       component: () => import('../views/ProfileAllModuls.vue'),
     },
     {
+      path: '/lol',
+      name: 'lol',
+      component: () => import('../views/List.vue')
+    },
+    {
       path: '/create',
       name: 'create',
       component: () => import('../views/Create.vue')
-    },
-    {
-      path: '/list',
-      name: 'list',
-      component: () => import('../views/List.vue')
     },
     {
       path: '/task/:id',

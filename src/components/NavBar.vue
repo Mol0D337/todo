@@ -13,7 +13,7 @@
         </router-link>
         <router-link
                 tag="li"
-                to="/list"
+                to="/lol"
                 exact
                 style="width: 100px;text-align: center"
         >

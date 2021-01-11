@@ -85,7 +85,7 @@
         localStorage.setItem('userProfile', 'yes');
         this.$store.dispatch('createProfile', profile);
         setTimeout(function(){
-          this.$router.push('/profile');
+          location.reload()
         }, 1800);
       }
     }

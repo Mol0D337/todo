@@ -93,7 +93,7 @@
         };
         this.$store.dispatch('createUser', user);
         localStorage.setItem('userAuth', 'yes');
-        this.$router.push('/profile');
+        location.reload()
       },
       updateMouthEyes() {
         if (this.email.length > 0) {

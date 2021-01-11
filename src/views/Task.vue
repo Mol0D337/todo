@@ -21,7 +21,7 @@
           <div v-if="task.status !== 'completed'" style="margin-top: 25px">
             <div class="btn__center">
               <router-link
-                      to="/list"
+                      to="/lol"
               >
                 <button class="btn red accent-2 waves-effect" type="submit" style="margin-right: 1rem; width: 100px">{{$t('create.back')}}</button>
               </router-link>
@@ -81,11 +81,11 @@ export default {
         description: this.description,
         date: this.date.date
       });
-      this.$router.push('/list')
+      this.$router.push('/lol')
     },
     completeTask() {
       this.$store.dispatch('completeTask', this.task.id);
-      this.$router.push('/list');
+      this.$router.push('/lol');
     }
   },
   destroyed() {
