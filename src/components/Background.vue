@@ -5,7 +5,7 @@
 
         <div class="title__container">
           <h1>
-            <div class="goo" contenteditable="true">{{$t('create.write')}}</div>
+            <div class="goo" style="opacity: 0.5;" contenteditable="true">{{$t('create.write')}}</div>
           </h1>
           <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
@@ -46,7 +46,6 @@
     background-color: #fff;
     padding: 0.5rem 1rem;
     filter: url(#goo);
-    opacity: 50%;
   }
 
   .goo:focus {
