@@ -1814,6 +1814,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-extract-comments@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/babel-extract-comments/-/babel-extract-comments-1.0.0.tgz#0a2aedf81417ed391b85e18b4614e693a0351a21"
@@ -1898,6 +1905,11 @@ bcrypt-pbkdf@^1.0.0:
   integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   dependencies:
     tweetnacl "^0.14.3"
+
+bezier-easing@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
 
 bfj@^6.1.1:
   version "6.1.2"
@@ -3764,7 +3776,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
   integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
@@ -4186,6 +4198,11 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoek@^5.0.3:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.4.tgz#0f7fa270a1cafeb364a4b2ddfaa33f864e4157da"
+  integrity sha512-Alr4ZQgoMlnere5FZJsIyfIjORBqZll5POhDsF4q64dPuJR6rNxXdDxtHSQq8OXRurhmx+PWYEE8bXRROY8h0w==
 
 hoopy@^0.1.4:
   version "0.1.4"
@@ -5205,10 +5222,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-materialize@^1.0.0:
+materialize-css@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/materialize/-/materialize-1.0.0.tgz#3e91c8a8c25475a7324e062ba34baf71c4a334aa"
-  integrity sha1-PpHIqMJUdacyTgYro0uvccSjNKo=
+  resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0.tgz#8d5db1c4a81c6d65f3b2e2ca83a8e08daa24d1be"
+  integrity sha512-4/oecXl8y/1i8RDZvyvwAICyqwNoKU4or5uf8uoAd74k76KzZ0Llym4zhJ5lLNUskcqjO0AuMcvNyDkpz8Z6zw==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -8175,10 +8192,24 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-conversational-form@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-conversational-form/-/vue-conversational-form-1.0.1.tgz#6f7eee4f5f6c27c84d085baaf1baa6e33075d6dc"
+  integrity sha512-JAs66MGoBScQGgiIK+xFFTE5pI+TB8rRmKfiK+QY7YLpFfPXqJkzYBfig5BNI2B6osLzM0PMXu5wkbk/3Crj5w==
+  dependencies:
+    hoek "^5.0.3"
+    vue "^2.6.10"
+    vue-scrollto "^2.15.0"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
+
+vue-i18n@^8.22.2:
+  version "8.22.3"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.22.3.tgz#4ac0fdc3e71d4fe188938c40a9ffca32cde60732"
+  integrity sha512-Vhyx7sZEmmW/aZLkzSlXei08Rv3hTondx4J9wbOjnThocTIK1QiXV6QRdT4BTnhT24JixDSf6kGkxqCXSaJ3Jw==
 
 "vue-loader-v16@npm:vue-loader@^16.0.0-beta.7":
   version "16.1.2"
@@ -8205,6 +8236,22 @@ vue-router@^3.2.0:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.9.tgz#c016f42030ae2932f14e4748b39a1d9a0e250e66"
   integrity sha512-CGAKWN44RqXW06oC+u4mPgHLQQi2t6vLD/JbGRDAXm0YpMv0bgpKuU5bBd7AvMgfTz9kXVRIWKHqRwGEb8xFkA==
 
+vue-scratchable@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/vue-scratchable/-/vue-scratchable-0.3.2.tgz#e349d1666270d1ac4a29d6e56a1edaf5235b5761"
+  integrity sha512-4BByE6I1y9CuRVD/6cAjaSvCmgu/U9GlTb/aCjx3lpPzMOBA0KGDuKIkyTh8aT83I9Cf+xF9vV/otJuJ7kXK+A==
+  dependencies:
+    core-js "^3.6.5"
+    lodash "^4.17.20"
+    vue "^2.6.12"
+
+vue-scrollto@^2.15.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.20.0.tgz#3ba52239a62710c97003d12d4393f1f3393cd5cc"
+  integrity sha512-7i+AGKJTThZnMEkhIPgrZjyAX+fXV7/rGdg+CV283uZZwCxwiMXaBLTmIc5RTA4uwGnT+E6eJle3mXQfM2OD3A==
+  dependencies:
+    bezier-easing "2.1.0"
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -8226,7 +8273,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.11:
+vue@^2.6.10, vue@^2.6.11, vue@^2.6.12:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
